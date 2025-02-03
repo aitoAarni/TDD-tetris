@@ -18,6 +18,9 @@ export class Board {
     const newFirstRow = this.board[0].split("")
     newFirstRow[1] = block
     this.board[0] = newFirstRow.join("")
-    
+  }
+  tick(){
+    this.board.splice(0, 0, "...")
+    this.board.pop()
   }
 }
