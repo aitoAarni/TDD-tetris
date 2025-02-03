@@ -2,11 +2,13 @@ export class Board {
   width: number;
   height: number;
   board: string[];
-
+  tetrominoFalling: boolean
   constructor(width: number, height: number) {
     this.width = width;
     this.height = height;
     this.board = ["...", "...", "..."];
+    this.tetrominoFalling = false
+    
   }
 
   toString() {
@@ -14,9 +16,13 @@ export class Board {
     return boardToString;
   }
 
-  drop(block: string) {
+  drop(tetromino: string) {
+    if (this.tetrominoFalling) {
+      throw new Error("already falling")
+    }
+    this.tetrominoFalling = true
     const newFirstRow = this.board[0].split("")
-    newFirstRow[1] = block
+    newFirstRow[1] = tetromino
     this.board[0] = newFirstRow.join("")
   }
   tick(){
