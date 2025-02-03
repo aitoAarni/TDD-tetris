@@ -22,14 +22,14 @@ export class Board {
     }
     this.tetrominoFalling = true
     const newFirstRow = this.board[0].split("")
-    newFirstRow[1] = tetromino
+    newFirstRow[1] = tetromino;
     this.board[0] = newFirstRow.join("")
   }
-  tick(){
+  tick() {
     this.board.splice(0, 0, "...")
-    this.board.pop()
+    this.board.pop();
   }
-  hasFalling(){
+  hasFalling() {
     if (this.tetrominoFalling) {
       return true
     }
