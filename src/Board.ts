@@ -29,4 +29,9 @@ export class Board {
     this.board.splice(0, 0, "...")
     this.board.pop()
   }
+  hasFalling(){
+    if (this.tetrominoFalling) {
+      return true
+    }
+  }
 }
