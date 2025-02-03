@@ -34,9 +34,12 @@ export class Board {
     }
     this.fallingTetrominoRow++;
     const board2 = structuredClone(this.board);
-    const newRow = board2[this.fallingTetrominoRow]
-    const oldRow = board2[this.fallingTetrominoRow-1]
-    
+    const oldRow = board2[this.fallingTetrominoRow - 1].split("");
+    const newRow = board2[this.fallingTetrominoRow].split("");
+    newRow[1] = oldRow[1];
+    oldRow[1] = ".";
+    board2[this.fallingTetrominoRow - 1] = oldRow.join("");
+    board2[this.fallingTetrominoRow] = newRow.join("");
     this.board.splice(0, 0, "...");
     this.board.pop();
   }
