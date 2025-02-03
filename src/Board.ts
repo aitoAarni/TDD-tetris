@@ -33,12 +33,7 @@ export class Board {
       return false;
     }
     this.fallingTetrominoRow++;
-    const oldRow = this.board[this.fallingTetrominoRow - 1].split("");
-    const newRow = this.board[this.fallingTetrominoRow].split("");
-    newRow[1] = oldRow[1];
-    oldRow[1] = ".";
-    this.board[this.fallingTetrominoRow - 1] = oldRow.join("");
-    this.board[this.fallingTetrominoRow] = newRow.join("");
+    this.moveFallingTetromino();
   }
   moveFallingTetromino() {
     const oldRow = this.board[this.fallingTetrominoRow - 1].split("");
