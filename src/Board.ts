@@ -15,6 +15,9 @@ export class Board {
   }
 
   drop(block: string) {
+    const newFirstRow = this.board[0].split("")
+    newFirstRow[1] = block
+    this.board[0] = newFirstRow.join("")
     
   }
 }
