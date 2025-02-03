@@ -3,13 +3,13 @@ export class Board {
   height: number;
   board: string[];
   tetrominoFalling: boolean;
-  tickCounter: number;
+  fallingTetrominoRow: number;
   constructor(width: number, height: number) {
     this.width = width;
     this.height = height;
     this.board = ["...", "...", "..."];
     this.tetrominoFalling = false;
-    this.tickCounter = 0;
+    this.fallingTetrominoRow = 0;
   }
 
   toString() {
@@ -27,11 +27,11 @@ export class Board {
     this.board[0] = newFirstRow.join("");
   }
   tick() {
-    if (this.tickCounter >= this.height - 1) {
+    if (this.fallingTetrominoRow >= this.height - 1) {
       this.tetrominoFalling = false;
       return false;
     }
-    this.tickCounter++;
+    this.fallingTetrominoRow++;
     this.board.splice(0, 0, "...");
     this.board.pop();
   }
