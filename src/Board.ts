@@ -29,9 +29,14 @@ export class Board {
   tick() {
     if (this.fallingTetrominoRow >= this.height - 1) {
       this.tetrominoFalling = false;
+      this.fallingTetrominoRow = 0;
       return false;
     }
     this.fallingTetrominoRow++;
+    const board2 = structuredClone(this.board);
+    const newRow = board2[this.fallingTetrominoRow]
+    const oldRow = board2[this.fallingTetrominoRow-1]
+    
     this.board.splice(0, 0, "...");
     this.board.pop();
   }
