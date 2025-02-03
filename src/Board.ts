@@ -8,8 +8,5 @@ export class Board {
   }
 
   toString() {
-    return `...
-       ...
-       ...`;
-  }
-}
+    return "...\n...\n...\n"
+  }}
