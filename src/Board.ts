@@ -27,7 +27,7 @@ export class Board {
     this.board[0] = newFirstRow.join("");
   }
   tick() {
-    if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow+1][1] !== ".") {
+    if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow + 1][1] !== ".") {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
       return false;
@@ -47,5 +47,14 @@ export class Board {
     if (this.tetrominoFalling) {
       return true;
     } else return false;
+  }
+}
+
+function convert(board: string[] | string[][]) {
+  if (typeof board[0] === "string") {
+    const newBoard = (board as string[]).map((rowString) => rowString.split(""));
+    return newBoard;
+  } else {
+    return board;
   }
 }
