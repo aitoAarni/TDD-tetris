@@ -27,7 +27,7 @@ export class Board {
     this.board[0] = newFirstRow.join("");
   }
   tick() {
-    if (this.fallingTetrominoRow >= this.height - 1) {
+    if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow+1][1] !== ".") {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
       return false;
