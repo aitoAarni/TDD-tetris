@@ -19,7 +19,6 @@ export class Board {
   }
 
   drop(tetromino: string) {
-    this.board = convert(this.board);
     if (this.tetrominoFalling) {
       throw new Error("already falling");
     }
@@ -36,7 +35,6 @@ export class Board {
     this.moveFallingTetromino();
   }
   moveFallingTetromino() {
-    this.board = convert(this.board);
     this.board[this.fallingTetrominoRow][1] = this.board[this.fallingTetrominoRow - 1][1];
     this.board[this.fallingTetrominoRow - 1][1] = ".";
   }
