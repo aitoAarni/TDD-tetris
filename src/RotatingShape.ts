@@ -1,8 +1,6 @@
 export class RotatingShape {
-  shape: string;
   shape2: string[][];
-  constructor(shape: string, shape2: string[][] = [[""]]) {
-    this.shape = shape;
+  constructor( shape2: string[][] = [[""]]) {
     this.shape2 = shape2;
   }
   static fromString(str: string) {
@@ -16,7 +14,7 @@ export class RotatingShape {
         }
         shape2.push(newRow)
     }
-    return new RotatingShape(shape, shape2);
+    return new RotatingShape( shape2);
   }
   toString() {
     const shapeString = this.shape2.map((row) => {
