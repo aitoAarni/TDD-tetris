@@ -50,10 +50,3 @@ export class Board {
     } else return false;
   }
 }
-
-function convert(board: string[] | string[][]) {
-  if (typeof board[0] === "string") {
-    const newBoard = (board as string[]).map((rowString) => rowString.split(""));
-    return newBoard;
-  }
-}
