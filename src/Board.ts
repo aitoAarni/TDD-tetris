@@ -13,8 +13,10 @@ export class Board {
   }
 
   toString() {
-    const boardToString = this.board.join("\n") + "\n";
-    return boardToString;
+    this.board = convert(this.board)
+    const boardRowsStrings = this.board.map((row: string[]) => {return row.join("")})
+    const boardString = boardRowsStrings.join("\n") + "\n"
+    return boardString
   }
 
   drop(tetromino: string) {
