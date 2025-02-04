@@ -7,15 +7,21 @@ export class Board {
   constructor(width: number, height: number) {
     this.width = width;
     this.height = height;
-    this.board = [[".", ".", "."],[".", ".", "."],[".", ".", "."]];
+    this.board = [
+      [".", ".", "."],
+      [".", ".", "."],
+      [".", ".", "."],
+    ];
     this.tetrominoFalling = false;
     this.fallingTetrominoRow = 0;
   }
 
   toString() {
-    const boardRowsStrings = this.board.map((row: string[]) => {return row.join("")})
-    const boardString = boardRowsStrings.join("\n") + "\n"
-    return boardString
+    const boardRowsStrings = this.board.map((row: string[]) => {
+      return row.join("");
+    });
+    const boardString = boardRowsStrings.join("\n") + "\n";
+    return boardString;
   }
 
   drop(tetromino: string) {
@@ -49,7 +55,5 @@ function convert(board: string[] | string[][]) {
   if (typeof board[0] === "string") {
     const newBoard = (board as string[]).map((rowString) => rowString.split(""));
     return newBoard;
-  } else {
-    return board as string[][];
   }
 }
