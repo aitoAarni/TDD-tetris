@@ -1,7 +1,7 @@
 export class Board {
   width: number;
   height: number;
-  board: string[];
+  board: string[] | string[][];
   tetrominoFalling: boolean;
   fallingTetrominoRow: number;
   constructor(width: number, height: number) {
@@ -18,13 +18,12 @@ export class Board {
   }
 
   drop(tetromino: string) {
+    this.board = convert(this.board);
     if (this.tetrominoFalling) {
       throw new Error("already falling");
     }
     this.tetrominoFalling = true;
-    const newFirstRow = this.board[0].split("");
-    newFirstRow[1] = tetromino;
-    this.board[0] = newFirstRow.join("");
+    this.board[0][1] = tetromino;
   }
   tick() {
     if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow + 1][1] !== ".") {
@@ -36,12 +35,9 @@ export class Board {
     this.moveFallingTetromino();
   }
   moveFallingTetromino() {
-    const oldRow = this.board[this.fallingTetrominoRow - 1].split("");
-    const newRow = this.board[this.fallingTetrominoRow].split("");
-    newRow[1] = oldRow[1];
-    oldRow[1] = ".";
-    this.board[this.fallingTetrominoRow - 1] = oldRow.join("");
-    this.board[this.fallingTetrominoRow] = newRow.join("");
+    this.board = convert(this.board);
+    this.board[this.fallingTetrominoRow][1] = this.board[this.fallingTetrominoRow - 1][1];
+    this.board[this.fallingTetrominoRow - 1][1] = ".";
   }
   hasFalling() {
     if (this.tetrominoFalling) {
@@ -55,6 +51,6 @@ function convert(board: string[] | string[][]) {
     const newBoard = (board as string[]).map((rowString) => rowString.split(""));
     return newBoard;
   } else {
-    return board;
+    return board as string[][];
   }
 }
