@@ -16,10 +16,12 @@ export class RotatingShape {
         }
         shape2.push(newRow)
     }
-    console.log(shape2)
-    return new RotatingShape(shape);
+    return new RotatingShape(shape, shape2);
   }
   toString() {
-    return this.shape;
+    const shapeString = this.shape2.map((row) => {
+        return row.join("")
+    }).join("\n") + "\n"
+    return shapeString;
   }
 }
