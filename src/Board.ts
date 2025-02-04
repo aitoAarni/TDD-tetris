@@ -7,7 +7,7 @@ export class Board {
   constructor(width: number, height: number) {
     this.width = width;
     this.height = height;
-    this.board = ["...", "...", "..."];
+    this.board = [[".", ".", "."],[".", ".", "."],[".", ".", "."]];
     this.tetrominoFalling = false;
     this.fallingTetrominoRow = 0;
   }
