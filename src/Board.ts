@@ -1,7 +1,7 @@
 export class Board {
   width: number;
   height: number;
-  board: string[] | string[][];
+  board: string[][];
   tetrominoFalling: boolean;
   fallingTetrominoRow: number;
   constructor(width: number, height: number) {
@@ -13,7 +13,6 @@ export class Board {
   }
 
   toString() {
-    this.board = convert(this.board)
     const boardRowsStrings = this.board.map((row: string[]) => {return row.join("")})
     const boardString = boardRowsStrings.join("\n") + "\n"
     return boardString
