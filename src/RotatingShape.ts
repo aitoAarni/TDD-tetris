@@ -4,14 +4,14 @@ export class RotatingShape {
     this.shape = shape;
   }
   static fromString(str: string) {
-    const shapeRows = str.replace(/\s/g, " ").trim().split(" ").filter(item => item.length>0);
+    const shapeRows = str.split(/\s/g).filter(item => item.length>0);
     const shape: string[][] = []
     for (let row of shapeRows){
       shape.push(row.split(""))
     }
     return new RotatingShape(shape);
   }
-
+  
   rotateRight(){
     const rotatedShape = [["", "",""], ["", "",""], ["", "",""]]
     this.shape[0].forEach((item, index) => rotatedShape[index][2] = item)
