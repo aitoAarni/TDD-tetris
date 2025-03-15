@@ -43,7 +43,7 @@ describe("Rotating 5x5 shape", () => {
      UVWXY`
   );
 
-  test.skip("initial orientation", () => {
+  test("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `ABCDE
        FGHIJ
