@@ -18,7 +18,6 @@ export class RotatingShape {
 
   rotateRight(){
     const rotatedShape = [["", "",""], ["", "",""], ["", "",""]]
-    console.log("this.shape: ", this.shape)
     this.shape[0].forEach((item, index) => rotatedShape[index][2] = item)
     this.shape[1].forEach((item, index) => rotatedShape[index][1] = item)
     this.shape[2].forEach((item, index) => rotatedShape[index][0] = item)
