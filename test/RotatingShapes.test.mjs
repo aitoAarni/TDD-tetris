@@ -1,15 +1,16 @@
 
-import { describe, test } from "vitest";
+import { describe, test, beforeEach } from "vitest";
 import { expect } from "chai";
 import { RotatingShape } from "../src/RotatingShape";
 
 describe("Rotating 3x3 shape", () => {
-  const shape = RotatingShape.fromString(
-    `ABC
-     DEF
-     GHI`
-  );
-
+  let shape 
+  beforeEach(() => {
+    shape = RotatingShape.fromString(
+      `ABC
+       DEF
+       GHI`)
+  })
   test("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `ABC
@@ -27,7 +28,6 @@ describe("Rotating 3x3 shape", () => {
   });
 
   test("can be rotated left/counter-clockwise", () => {
-    shape.rotateLeft()
     expect(shape.rotateLeft().toString()).to.equalShape(
       `CFI
        BEH
