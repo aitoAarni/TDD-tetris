@@ -13,7 +13,7 @@ export class RotatingShape {
         }
         shape.push(newRow)
     }
-    return new RotatingShape( shape);
+    return new RotatingShape(shape);
   }
 
   rotateRight(){
@@ -22,7 +22,7 @@ export class RotatingShape {
     this.shape[1].forEach((item, index) => rotatedShape[index][1] = item)
     this.shape[2].forEach((item, index) => rotatedShape[index][0] = item)
     this.shape = rotatedShape
-    return this
+    return new RotatingShape(rotatedShape)
   }
 
   rotateLeft(){
