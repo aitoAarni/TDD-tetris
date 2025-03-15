@@ -21,7 +21,6 @@ export class RotatingShape {
     this.shape[0].forEach((item, index) => rotatedShape[index][2] = item)
     this.shape[1].forEach((item, index) => rotatedShape[index][1] = item)
     this.shape[2].forEach((item, index) => rotatedShape[index][0] = item)
-    this.shape = rotatedShape
     return new RotatingShape(rotatedShape)
   }
 
@@ -30,7 +29,7 @@ export class RotatingShape {
   this.shape[0].forEach((item, index) => (rotatedShape[2 - index][0] = item));
   this.shape[1].forEach((item, index) => (rotatedShape[2 - index][1] = item));
   this.shape[2].forEach((item, index) => (rotatedShape[2 - index][2] = item));
-  this.shape = rotatedShape;
+
   return this}
   toString() {
     const shapeString = this.shape.map((row) => {
