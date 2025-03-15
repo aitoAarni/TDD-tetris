@@ -4,11 +4,7 @@ export class RotatingShape {
     this.shape = shape;
   }
   static fromString(str: string) {
-    const shapeRows = str.split(/\s/g).filter(item => item.length>0);
-    const shape: string[][] = []
-    for (let row of shapeRows){
-      shape.push(row.split(""))
-    }
+    const shape = str.split(/\s/g).filter(item => item.length>0).map(row => row.split(""));
     return new RotatingShape(shape);
   }
   
