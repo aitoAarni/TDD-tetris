@@ -7,12 +7,12 @@ export class RotatingShape {
     const shape = str.split(/\s/g).filter(item => item.length>0).map(row => row.split(""));
     return new RotatingShape(shape);
   }
-  
   rotateRight(){
-    const rotatedShape = [["", "",""], ["", "",""], ["", "",""]]
-    this.shape[0].forEach((item, index) => rotatedShape[index][2] = item)
-    this.shape[1].forEach((item, index) => rotatedShape[index][1] = item)
-    this.shape[2].forEach((item, index) => rotatedShape[index][0] = item)
+    const rotatedShape = new Array(this.shape.length).fill(null).map(() => new Array(this.shape.length).fill(""))
+    for (let i = 0; i<this.shape.length; i++){
+      this.shape[i].forEach((item, index) => rotatedShape[index][this.shape.length-i] = item)
+
+    }
     return new RotatingShape(rotatedShape)
   }
 
