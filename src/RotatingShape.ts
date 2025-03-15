@@ -7,6 +7,7 @@ export class RotatingShape {
     const shape = str.split(/\s/g).filter(item => item.length>0).map(row => row.split(""));
     return new RotatingShape(shape);
   }
+  
   rotateRight(){
     const rotatedShape = new Array(this.shape.length).fill(null).map(() => new Array(this.shape.length).fill(""))
     for (let i = 0; i<this.shape.length; i++){
