@@ -10,18 +10,19 @@ export class RotatingShape {
   rotateRight(){
     const rotatedShape = new Array(this.shape.length).fill(null).map(() => new Array(this.shape.length).fill(""))
     for (let i = 0; i<this.shape.length; i++){
-      this.shape[i].forEach((item, index) => rotatedShape[index][this.shape.length-i] = item)
+      this.shape[i].forEach((item, index) => rotatedShape[index][this.shape.length-1-i] = item)
 
     }
     return new RotatingShape(rotatedShape)
   }
 
   rotateLeft(){
-  const rotatedShape = [["", "", ""], ["", "", ""], ["", "", ""]]
-  this.shape[0].forEach((item, index) => (rotatedShape[2 - index][0] = item));
-  this.shape[1].forEach((item, index) => (rotatedShape[2 - index][1] = item));
-  this.shape[2].forEach((item, index) => (rotatedShape[2 - index][2] = item));
-  return new RotatingShape(rotatedShape)
+    const rotatedShape = new Array(this.shape.length).fill(null).map(() => new Array(this.shape.length).fill(""))
+    for (let i = 0; i<this.shape.length; i++) {
+      
+      this.shape[i].forEach((item, index) => rotatedShape[this.shape.length-1 - index][i] = item);
+    }
+    return new RotatingShape(rotatedShape)
 }
 
 toString() {
