@@ -37,6 +37,11 @@ class O_shape {
     rotateRight() {
         return new O_shape(new RotatingShape(this.shape.shape))
     }
+
+    rotateLeft() {
+        return new O_shape(new RotatingShape(this.shape.shape))
+    }
+
     toString(){
         return this.shape.toString()
     }
