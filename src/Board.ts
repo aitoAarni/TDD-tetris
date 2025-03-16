@@ -22,7 +22,7 @@ export class Board {
     return boardString;
   }
 
-  drop(tetromino: string | null= null, tetromino2: RotatingShape | null ) {
+  drop(tetromino2: RotatingShape | null ) {
     if (this.tetrominoFalling || !tetromino2) {
       throw new Error("already falling");
     }
