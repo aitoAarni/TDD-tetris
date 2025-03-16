@@ -20,7 +20,7 @@ describe("Falling blocks", () => {
   
   describe("When a block is dropped", () => {
   beforeEach(() => {
-      board.drop("X", RotatingShape.fromString("x"));
+      board.drop("X", RotatingShape.fromString("X"));
     });
 
     test("it starts from the top middle", () => {
@@ -111,4 +111,4 @@ describe("Falling blocks", () => {
       expect(board.hasFalling(), "the block should stop moving").to.be.false;
     });
   });
-});
+})

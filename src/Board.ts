@@ -22,12 +22,12 @@ export class Board {
     return boardString;
   }
 
-  drop(tetromino: string, tetromino2: RotatingShape | null=null) {
+  drop(tetromino: string, tetromino2: RotatingShape ) {
     if (this.tetrominoFalling) {
       throw new Error("already falling");
     }
     this.tetrominoFalling = true;
-    this.board[0][1] = tetromino;
+    this.board[0][1] = tetromino2.shape[0][0];
   }
   tick() {
     if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow + 1][1] !== ".") {
