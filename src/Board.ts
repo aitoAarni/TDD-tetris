@@ -47,7 +47,7 @@ export class Board {
       this.board[this.fallingTetrominoRow + 1].filter((block, columnIndex) => {
         if ((block !== ".") && (this.board[this.fallingTetrominoRow][columnIndex] !== ".")) return true
         return false
-      }).length !== 0
+      }).length
     ) {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
