@@ -28,15 +28,17 @@ export class Board {
     if (this.tetrominoFalling) {
       throw new Error("already falling");
     }
-    this.fallingTetromino = tetromino
+    this.fallingTetromino = tetromino;
     this.tetrominoFalling = true;
-    const columnStart = Math.floor((this.width -tetromino.size) / 2) 
-    tetromino.shape.forEach((row, rowIndex) => row.forEach((block, columnIndex) => {
-      if (block !== "") {
-        this.board[rowIndex][columnStart+columnIndex] = block
-        this.fallingTetrominoRow = rowIndex
-      }
-    }))
+    const columnStart = Math.floor((this.width - tetromino.size) / 2);
+    tetromino.shape.forEach((row, rowIndex) =>
+      row.forEach((block, columnIndex) => {
+        if (block !== "") {
+          this.board[rowIndex][columnStart + columnIndex] = block;
+          this.fallingTetrominoRow = rowIndex;
+        }
+      })
+    );
   }
   tick() {
     if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow + 1][1] !== ".") {
