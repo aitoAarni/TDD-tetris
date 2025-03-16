@@ -48,7 +48,7 @@ describe("The T shape", () => {
 });
 
 
-/*
+
 describe("The I shape", () => {
   const shape = Tetromino.I_SHAPE;
 
