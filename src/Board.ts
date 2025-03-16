@@ -40,6 +40,7 @@ export class Board {
       })
     );
   }
+  
   tick() {
     if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow + 1][1] !== ".") {
       this.tetrominoFalling = false;
