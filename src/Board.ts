@@ -27,7 +27,7 @@ export class Board {
       throw new Error("already falling");
     }
     this.tetrominoFalling = true;
-    this.board[0][1] = tetromino2.shape[0][0];
+    this.board[0][Math.floor(this.width/2)] = tetromino2.shape[0][0];
   }
   tick() {
     if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow + 1][1] !== ".") {
