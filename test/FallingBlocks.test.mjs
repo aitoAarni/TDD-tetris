@@ -83,11 +83,11 @@ describe("Falling blocks", () => {
   
   describe("When a block lands on another block", () => {
     beforeEach(() => {
-      board.drop("X");
+      board.drop("X", RotatingShape.fromString("X"));
       board.tick();
       board.tick();
       board.tick();
-      board.drop("Y");
+      board.drop("Y", RotatingShape.fromString("Y"));
       board.tick();
     });
 
