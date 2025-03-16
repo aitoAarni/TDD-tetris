@@ -42,7 +42,13 @@ export class Board {
   }
 
   tick() {
-    if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow + 1][1] !== ".") {
+    if (
+      this.fallingTetrominoRow >= this.height - 1 ||
+      this.board[this.fallingTetrominoRow + 1].filter((block, columnIndex) => {
+        if ((block !== ".") && (this.board[this.fallingTetrominoRow][columnIndex] !== ".")) return true
+        return false
+      }).length !== 0
+    ) {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
       return false;
@@ -50,7 +56,7 @@ export class Board {
     this.fallingTetrominoRow++;
     this.moveFallingTetromino();
   }
-  
+
   moveFallingTetromino() {
     if (!this.fallingTetromino) return;
     const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
