@@ -1,6 +1,7 @@
 import { beforeEach, describe, test } from "vitest";
 import { expect } from "chai";
 import { Board } from "../src/Board";
+import { RotatingShape } from "../src/RotatingShape";
 
 describe("Falling blocks", () => {
   let board;
@@ -19,7 +20,7 @@ describe("Falling blocks", () => {
   
   describe("When a block is dropped", () => {
   beforeEach(() => {
-      board.drop("X");
+      board.drop("X", RotatingShape.fromString("x"));
     });
 
     test("it starts from the top middle", () => {
