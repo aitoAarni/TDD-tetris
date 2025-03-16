@@ -3,9 +3,13 @@ import { RotatingShape } from "./RotatingShape";
 
 class I_shape {
     shape:  RotatingShape
-    
+
     constructor(shape:  RotatingShape) {
         this.shape = shape}
+
+    rotateRight() {
+        return this.shape.rotateRight()
+    }
 
     toString(){
         return this.shape.toString()
