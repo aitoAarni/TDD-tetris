@@ -40,7 +40,7 @@ export class Board {
       })
     );
   }
-  
+
   tick() {
     if (this.fallingTetrominoRow >= this.height - 1 || this.board[this.fallingTetrominoRow + 1][1] !== ".") {
       this.tetrominoFalling = false;
@@ -50,6 +50,7 @@ export class Board {
     this.fallingTetrominoRow++;
     this.moveFallingTetromino();
   }
+  
   moveFallingTetromino() {
     if (!this.fallingTetromino) return;
     const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
@@ -62,6 +63,7 @@ export class Board {
       });
     });
   }
+
   hasFalling() {
     if (this.tetrominoFalling) {
       return true;
