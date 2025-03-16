@@ -43,7 +43,7 @@ describe("Falling blocks", () => {
 
     test("at most one block may be falling at a time", () => {
       const before = board.toString();
-      expect(() => board.drop("Y")).to.throw("already falling");
+      expect(() => board.drop("Y", RotatingShape.fromString("Y"))).to.throw("already falling");
       const after = board.toString();
       expect(after).to.equal(before);
     });
@@ -53,7 +53,7 @@ describe("Falling blocks", () => {
   
   describe("When a block reaches the bottom", () => {
     beforeEach(() => {
-      board.drop("X");
+      board.drop("X", RotatingShape.fromString("X"));
       board.tick();
       board.tick();
     });
