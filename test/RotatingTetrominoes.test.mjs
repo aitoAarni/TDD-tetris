@@ -1,7 +1,6 @@
-/*
-import { describe, test } from "vitest";
+ import { describe, test } from "vitest";
 import { expect } from "chai";
-import { Tetromino } from "../src/Tetromino.mjs";
+import { Tetromino } from "../src/Tetromino";
 
 function distinctOrientations(shape) {
   const distinct = new Set();
@@ -47,7 +46,7 @@ describe("The T shape", () => {
     expect(distinctOrientations(shape).size).to.equal(4);
   });
 });
-*/
+
 
 /*
 describe("The I shape", () => {
@@ -87,7 +86,7 @@ describe("The I shape", () => {
     expect(distinctOrientations(shape).size).to.equal(2);
   });
 });
-*/
+
 
 /*
 describe("The O shape", () => {
