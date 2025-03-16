@@ -1,3 +1,5 @@
+import { RotatingShape } from "./RotatingShape";
+
 export class Board {
   width: number;
   height: number;
@@ -20,7 +22,7 @@ export class Board {
     return boardString;
   }
 
-  drop(tetromino: string) {
+  drop(tetromino: string, tetromino2: RotatingShape | null=null) {
     if (this.tetrominoFalling) {
       throw new Error("already falling");
     }
