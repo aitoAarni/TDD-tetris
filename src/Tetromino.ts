@@ -8,7 +8,12 @@ class I_shape {
         this.shape = shape}
 
     rotateRight() {
-        return this.shape.rotateRight()
+        const newShape = this.shape.rotateRight()
+        const lastIndex = newShape.shape.length-1
+        const temp = newShape.shape[Math.floor(lastIndex/2)][lastIndex]
+        newShape.shape[Math.floor(lastIndex/2)][lastIndex] = newShape.shape[Math.floor(lastIndex/2)][0]
+        newShape.shape[Math.floor(lastIndex/2)][0] = temp
+        return new I_shape(new RotatingShape(newShape.shape))
     }
 
     rotateLeft() {
@@ -16,7 +21,7 @@ class I_shape {
         const temp = newShape.shape[newShape.shape.length-1]
         newShape.shape[newShape.shape.length-1] = newShape.shape[0]
         newShape.shape[0] = temp
-        return newShape
+        return new I_shape(new RotatingShape(newShape.shape))
     }
     toString(){
         return this.shape.toString()
