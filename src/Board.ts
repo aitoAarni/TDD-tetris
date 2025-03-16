@@ -48,8 +48,16 @@ export class Board {
     this.moveFallingTetromino();
   }
   moveFallingTetromino() {
-    this.board[this.fallingTetrominoRow][1] = this.board[this.fallingTetrominoRow - 1][1];
-    this.board[this.fallingTetrominoRow - 1][1] = ".";
+    if (!this.fallingTetromino) return
+    const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2)
+    this.fallingTetromino.shape.slice().forEach((row, rowIndex) => {
+        row.forEach((block, columnIndex) => {
+          if (block !== "") {
+            this.board[this.fallingTetrominoRow-rowIndex-1][columnStart + columnIndex] = "."
+            this.board[this.fallingTetrominoRow-rowIndex][columnStart + columnIndex] = block
+          }
+        })
+    })
   }
   hasFalling() {
     if (this.tetrominoFalling) {
