@@ -6,14 +6,14 @@ export class Board {
   board: string[][];
   tetrominoFalling: boolean;
   fallingTetrominoRow: number;
-  fallingTetromino: RotatingShape | null
+  fallingTetromino: RotatingShape | null;
   constructor(width: number, height: number) {
     this.width = width;
     this.height = height;
-    this.board = new Array(height).fill(null).map(() => new Array(width).fill("."))
+    this.board = new Array(height).fill(null).map(() => new Array(width).fill("."));
     this.tetrominoFalling = false;
     this.fallingTetrominoRow = 0;
-    this.fallingTetromino = null
+    this.fallingTetromino = null;
   }
 
   toString() {
@@ -24,7 +24,7 @@ export class Board {
     return boardString;
   }
 
-  drop(tetromino: RotatingShape  ) {
+  drop(tetromino: RotatingShape) {
     if (this.tetrominoFalling) {
       throw new Error("already falling");
     }
