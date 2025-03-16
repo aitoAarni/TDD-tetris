@@ -28,6 +28,7 @@ export class Board {
     if (this.tetrominoFalling) {
       throw new Error("already falling");
     }
+    this.fallingTetromino = tetromino
     this.tetrominoFalling = true;
     const columnStart = Math.floor((this.width -tetromino.size) / 2) 
     tetromino.shape.forEach((row, rowIndex) => row.forEach((block, columnIndex) => {
