@@ -7,7 +7,6 @@ function distinctOrientations(shape) {
   let goingRight = shape;
   let goingLeft = shape;
   for (let i = 0; i < 10; i++) {
-    console.log("I: ", i)
     distinct.add(goingRight.toString());
     goingRight = goingRight.rotateRight();
     distinct.add(goingLeft.toString());
@@ -101,7 +100,7 @@ describe("The O shape", () => {
     );
   });
 
-  test.skip("cannot be rotated right/clockwise", () => {
+  test("cannot be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
       `.OO
        .OO

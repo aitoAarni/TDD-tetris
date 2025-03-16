@@ -30,11 +30,13 @@ class I_shape {
 
 class O_shape {
     shape: RotatingShape
-    
+
     constructor(shape: RotatingShape){
         this.shape = shape
     }
-
+    rotateRight() {
+        return new O_shape(new RotatingShape(this.shape.shape))
+    }
     toString(){
         return this.shape.toString()
     }
