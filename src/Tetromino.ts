@@ -3,9 +3,11 @@ import { RotatingShape } from "./RotatingShape";
 
 class I_shape {
     shape:  RotatingShape
-
+    size: number
     constructor(shape:  RotatingShape) {
-        this.shape = shape}
+        this.shape = shape
+        this.size = shape.size
+    }
 
     rotateRight() {
         const newShape = this.shape.rotateRight()
@@ -30,9 +32,12 @@ class I_shape {
 
 class O_shape {
     shape: RotatingShape
+    size: number
 
     constructor(shape: RotatingShape){
         this.shape = shape
+        this.size = shape.size
+
     }
     rotateRight() {
         return new O_shape(new RotatingShape(this.shape.shape))

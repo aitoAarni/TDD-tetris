@@ -30,7 +30,6 @@ export class Board {
     const columnStart = Math.floor((this.width -tetromino.size) / 2) 
 
     tetromino.shape.forEach((row, rowIndex) => row.forEach((block, columnIndex) => {
-
       if (block !== "") {
           this.board[rowIndex][columnStart+columnIndex] = block
       }
