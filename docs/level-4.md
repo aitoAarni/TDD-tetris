@@ -4,7 +4,6 @@
 
 Open the [test/FallingTetrominoes.test.mjs](../test/FallingTetrominoes.test.mjs) file and implement its tests one by
 one.
-
 The `Board` class needs to be updated to work with complex block shapes. You will need to find and update every place
 where the old code assumes 1×1 blocks (and a 3×3 board). Create an appropriate abstraction so that the same code works
 for all block shapes. For example, extract the 1×1 block (which is used in `FallingBlocks.test.mjs`) into a class which

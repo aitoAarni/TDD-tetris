@@ -1,8 +1,7 @@
-/*
 import { beforeEach, describe, test } from "vitest";
 import { expect } from "chai";
-import { Board } from "../src/Board.mjs";
-import { Tetromino } from "../src/Tetromino.mjs";
+import { Board } from "../src/Board";
+import { Tetromino } from "../src/Tetromino";
 
 function fallToBottom(board) {
   for (let i = 0; i < 10; i++) {
@@ -16,7 +15,7 @@ describe("Falling tetrominoes", () => {
     board = new Board(10, 6);
   });
 
-  test("start from the top middle", () => {
+  test.skip("start from the top middle", () => {
     board.drop(Tetromino.T_SHAPE);
 
     expect(board.toString()).to.equalShape(
@@ -59,4 +58,3 @@ describe("Falling tetrominoes", () => {
     );
   });
 });
-*/
