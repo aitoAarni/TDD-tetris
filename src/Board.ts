@@ -45,8 +45,8 @@ export class Board {
     if (
       this.fallingTetrominoRow >= this.height - 1 ||
       this.board[this.fallingTetrominoRow + 1].filter((block, columnIndex) => {
-        if ((block !== ".") && (this.board[this.fallingTetrominoRow][columnIndex] !== ".")) return true
-        return false
+        if (block !== "." && this.board[this.fallingTetrominoRow][columnIndex] !== ".") return true;
+        return false;
       }).length
     ) {
       this.tetrominoFalling = false;
@@ -57,18 +57,18 @@ export class Board {
     this.moveFallingTetromino();
   }
 
-  removeFallingTetromino(){
+  removeFallingTetromino() {
     if (this.fallingTetromino === null) {
-      return
+      return;
     }
-    const rowStart = this.fallingTetrominoRow-this.fallingTetromino.size
-    const columnStart = Math.floor((this.width - this.fallingTetromino?.size) / 2) 
+    const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size;
+    const columnStart = Math.floor((this.width - this.fallingTetromino?.size) / 2);
     this.fallingTetromino.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
-        if (block == ".") return
-        this.board[rowStart + rowIndex ][columnStart+columnIndex]
-      })
-    })
+        if (block == ".") return;
+        this.board[rowStart + rowIndex][columnStart + columnIndex];
+      });
+    });
   }
 
   moveFallingTetromino() {
