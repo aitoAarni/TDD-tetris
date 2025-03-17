@@ -123,8 +123,11 @@ export class Board {
       } else if (
         (this.fallingTetromino as RotatingShape).size - 1 > rowIndex &&
         this.fallingTetromino?.shape[rowIndex + 1][columnIndex] !== "."
-      ) return;
+      )
+        return;
       else if (this.board[rowStart + rowIndex + 1][columnStart + columnIndex] !== ".") {
-        this.tetrominoFalling = false;}}
+        this.tetrominoFalling = false;
+      }
+    };
   }
 }
