@@ -131,6 +131,7 @@ export class Board {
         canMoveDownBool = false;
       }
     };
+    this.iterateTetrominoShape(CheckBlock)
     return canMoveDownBool;
   }
 }
