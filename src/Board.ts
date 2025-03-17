@@ -66,7 +66,7 @@ export class Board {
     this.fallingTetromino.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
         if (block == ".") return;
-        this.board[rowStart + rowIndex][columnStart + columnIndex];
+        this.board[rowStart + rowIndex][columnStart + columnIndex] = ".";
       });
     });
   }
