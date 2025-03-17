@@ -43,12 +43,7 @@ export class Board {
 
   tick() {
     if (!this.fallingTetromino) return;
-    const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
-    const rowStart = this.fallingTetrominoRow - (this.fallingTetromino.size - 1);
-    const CheckBlock = (block: string, rowIndex: number, columnIndex: number) => {
-      if (block === ".") return;
-  
-    };
+
     const moveDown = this.canMoveDown()
     if (!moveDown || !this.tetrominoFalling) {
       this.tetrominoFalling = false
