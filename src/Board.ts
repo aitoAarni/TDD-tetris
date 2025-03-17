@@ -64,16 +64,7 @@ export class Board {
     if (!this.fallingTetromino) return;
     this.removeFallingTetromino();
     const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
-    this.fallingTetromino.shape
-      .slice()
-      .reverse()
-      .forEach((row, rowIndex) => {
-        row.forEach((block, columnIndex) => {
-          if (block !== ".") {
-            this.board[this.fallingTetrominoRow - rowIndex][columnStart + columnIndex] = block;
-          }
-        });
-      });
+    this.drawFallingTetromino()
   }
 
   hasFalling() {
