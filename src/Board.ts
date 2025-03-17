@@ -42,6 +42,10 @@ export class Board {
   }
 
   tick() {
+    if (!this.fallingTetromino) return;
+    const columnStart = Math.floor((this.width - this.fallingTetromino?.size) / 2);
+    const rowStart = this.fallingTetrominoRow - (this.fallingTetromino.size - 1);
+    this.fallingTetromino.shape.forEach((row, rowIndex) => {});
     if (
       this.fallingTetrominoRow >= this.height - 1 ||
       this.board[this.fallingTetrominoRow + 1].filter((block, columnIndex) => {
