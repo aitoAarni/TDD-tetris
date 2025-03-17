@@ -105,6 +105,8 @@ export class Board {
   }
 
   iterateTetrominoShape() {
-    
+    if (!this.fallingTetromino) return;
+    this.fallingTetromino as RotatingShape;
+    this.fallingTetromino.shape.forEach((row, rowIndex) => {});
   }
 }
