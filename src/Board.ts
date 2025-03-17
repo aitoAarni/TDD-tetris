@@ -98,6 +98,7 @@ export class Board {
       });
     });
   }
+
   canMoveDown() {
     if (!this.fallingTetromino) return false;
     let canMoveDownBool = true;
@@ -118,5 +119,9 @@ export class Board {
     };
     this.iterateTetrominoShape(CheckBlock);
     return canMoveDownBool;
+  }
+  
+  drawFallingTetromino() {
+
   }
 }
