@@ -58,8 +58,9 @@ export class Board {
   }
 
   removeFallingTetromino(){
+    const columnStart = this.fallingTetromino ? Math.floor((this.width - this.fallingTetromino?.size) / 2) : 0
     this.fallingTetromino?.shape.forEach((row, rowIndex) => {
-      
+      row.forEach
     })
   }
 
