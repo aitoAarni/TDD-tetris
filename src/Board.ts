@@ -61,7 +61,6 @@ export class Board {
       });
     });
     if (!this.tetrominoFalling) {
-      this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
       return false;
     }
