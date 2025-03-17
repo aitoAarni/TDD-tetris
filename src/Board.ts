@@ -120,8 +120,10 @@ export class Board {
     this.iterateTetrominoShape(CheckBlock);
     return canMoveDownBool;
   }
-  
-  drawFallingTetromino() {
 
+  drawFallingTetromino() {
+    if (!this.fallingTetromino) return
+    
+    const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
   }
 }
