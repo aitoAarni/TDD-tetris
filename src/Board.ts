@@ -59,7 +59,9 @@ export class Board {
       }
     };
     this.iterateTetrominoShape(CheckBlock);
-    if (!this.tetrominoFalling) {
+    const moveDown = this.canMoveDown()
+    if (!moveDown || !this.tetrominoFalling) {
+      this.tetrominoFalling = false
       this.fallingTetrominoRow = 0;
       return false;
     }
