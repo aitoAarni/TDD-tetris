@@ -47,14 +47,14 @@ export class Board {
     const rowStart = this.fallingTetrominoRow - (this.fallingTetromino.size - 1);
     const CheckBlock = (block: string, rowIndex: number, columnIndex: number) => {
 
-        if (block === ".") return;
-        if (this.height - 1 <= rowIndex + rowStart) {
-          this.tetrominoFalling = false;
-        } else if (
-          (this.fallingTetromino as RotatingShape).size - 1 > rowIndex &&
-          this.fallingTetromino?.shape[rowIndex + 1][columnIndex] !== "."
-        )
-          return;
+      if (block === ".") return;
+      if (this.height - 1 <= rowIndex + rowStart) {
+        this.tetrominoFalling = false;
+      } else if (
+        (this.fallingTetromino as RotatingShape).size - 1 > rowIndex &&
+        this.fallingTetromino?.shape[rowIndex + 1][columnIndex] !== "."
+      )
+        return;
         else if (this.board[rowStart + rowIndex + 1][columnStart + columnIndex] !== ".") {
           this.tetrominoFalling = false;
         }}
