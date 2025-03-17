@@ -74,12 +74,12 @@ export class Board {
     }
     const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size;
     const columnStart = Math.floor((this.width - this.fallingTetromino?.size) / 2);
-    this.fallingTetromino.shape.forEach((row, rowIndex) => {
-      row.forEach((block, columnIndex) => {
-        if (block == ".") return;
-        this.board[rowStart + rowIndex][columnStart + columnIndex] = ".";
-      });
-    });
+        const removeBlock =(block: string, rowIndex:number, columnIndex: number) => {
+
+          if (block === ".") return;
+          this.board[rowStart + rowIndex][columnStart + columnIndex] = ".";
+        }
+    this.iterateTetrominoShape(removeBlock)
   }
 
   moveFallingTetromino() {
