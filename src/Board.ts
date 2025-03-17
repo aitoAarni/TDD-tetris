@@ -129,5 +129,6 @@ export class Board {
         this.board[rowIndex][columnStart + columnIndex] = block;
       }
     };
+    this.iterateTetrominoShape(drawBlock);
   }
 }
