@@ -122,8 +122,12 @@ export class Board {
   }
 
   drawFallingTetromino() {
-    if (!this.fallingTetromino) return
-    
+    if (!this.fallingTetromino) return;
     const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
+    const drawBlock = (block: string, rowIndex: number, columnIndex: number) => {
+      if (block !== ".") {
+        this.board[rowIndex][columnStart + columnIndex] = block;
+      }
+    };
   }
 }
