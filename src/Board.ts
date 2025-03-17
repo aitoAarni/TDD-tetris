@@ -63,8 +63,7 @@ export class Board {
   moveFallingTetromino() {
     if (!this.fallingTetromino) return;
     this.removeFallingTetromino();
-    const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
-    this.drawFallingTetromino()
+    this.drawFallingTetromino();
   }
 
   hasFalling() {
