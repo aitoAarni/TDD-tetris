@@ -55,7 +55,7 @@ export class Board {
       return;
     }
     const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size;
-    const columnStart = Math.floor((this.width - this.fallingTetromino?.size) / 2);
+    const columnStart = this.tetrominoStartColumn;
     const removeBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
       this.board[rowStart + rowIndex][columnStart + columnIndex] = ".";
@@ -88,7 +88,7 @@ export class Board {
   canMoveDown() {
     if (!this.fallingTetromino) return false;
     let canMoveDownBool = true;
-    const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
+    const columnStart = this.tetrominoStartColumn;
     const rowStart = this.fallingTetrominoRow - (this.fallingTetromino.size - 1);
     const CheckBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
