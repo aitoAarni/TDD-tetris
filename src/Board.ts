@@ -29,13 +29,13 @@ export class Board {
       throw new Error("already falling");
     }
     this.fallingTetromino = tetromino;
+    this.fallingTetrominoRow = tetromino.size - 1
     this.tetrominoFalling = true;
     const columnStart = Math.floor((this.width - tetromino.size) / 2);
     tetromino.shape.forEach((row, rowIndex) =>
       row.forEach((block, columnIndex) => {
         if (block !== ".") {
           this.board[rowIndex][columnStart + columnIndex] = block;
-          this.fallingTetrominoRow = rowIndex;
         }
       })
     );
@@ -86,7 +86,7 @@ export class Board {
     if (!this.fallingTetromino) return;
     this.removeFallingTetromino();
     const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
-    this.fallingTetromino.shape.slice().forEach((row, rowIndex) => {
+    this.fallingTetromino.shape.slice().reverse().forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
         if (block !== ".") {
           this.board[this.fallingTetrominoRow - rowIndex][columnStart + columnIndex] = block;
