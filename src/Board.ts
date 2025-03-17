@@ -58,7 +58,6 @@ export class Board {
         this.tetrominoFalling = false;
       }
     };
-    this.iterateTetrominoShape(CheckBlock);
     const moveDown = this.canMoveDown()
     if (!moveDown || !this.tetrominoFalling) {
       this.tetrominoFalling = false
