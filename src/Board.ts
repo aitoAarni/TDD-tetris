@@ -111,7 +111,10 @@ export class Board {
       });
     });
   }
-  canMoveDown(){
-    
+  canMoveDown() {
+    if (!this.fallingTetromino) return false;
+
+    const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
+    const rowStart = this.fallingTetrominoRow - (this.fallingTetromino.size - 1);
   }
 }
