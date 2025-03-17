@@ -31,8 +31,7 @@ export class Board {
     this.fallingTetromino = tetromino;
     this.fallingTetrominoRow = tetromino.size - 1;
     this.tetrominoFalling = true;
-    const columnStart = Math.floor((this.width - tetromino.size) / 2);
-    this.drawFallingTetromino()
+    this.drawFallingTetromino();
   }
 
   tick() {
