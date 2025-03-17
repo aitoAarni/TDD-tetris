@@ -62,7 +62,7 @@ export class Board {
     const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
     this.fallingTetromino.shape.slice().forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
-        if (block !== "") {
+        if (block !== ".") {
           this.board[this.fallingTetrominoRow - rowIndex - 1][columnStart + columnIndex] = ".";
           this.board[this.fallingTetrominoRow - rowIndex][columnStart + columnIndex] = block;
         }
