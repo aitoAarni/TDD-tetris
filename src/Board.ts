@@ -44,9 +44,9 @@ export class Board {
   tick() {
     if (!this.fallingTetromino) return;
 
-    const moveDown = this.canMoveDown()
+    const moveDown = this.canMoveDown();
     if (!moveDown || !this.tetrominoFalling) {
-      this.tetrominoFalling = false
+      this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
       return false;
     }
@@ -116,7 +116,7 @@ export class Board {
         canMoveDownBool = false;
       }
     };
-    this.iterateTetrominoShape(CheckBlock)
+    this.iterateTetrominoShape(CheckBlock);
     return canMoveDownBool;
   }
 }
