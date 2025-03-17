@@ -103,4 +103,8 @@ export class Board {
       return true;
     } else return false;
   }
+
+  iterateTetrominoShape() {
+    
+  }
 }
