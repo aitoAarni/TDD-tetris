@@ -73,7 +73,7 @@ export class Board {
 
   moveFallingTetromino() {
     if (!this.fallingTetromino) return;
-    this.removeFallingTetromino()
+    this.removeFallingTetromino();
     const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
     this.fallingTetromino.shape.slice().forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
