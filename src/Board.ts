@@ -60,13 +60,7 @@ export class Board {
         }
       });
     });
-    if (
-      this.fallingTetrominoRow >= this.height - 1 ||
-      this.board[this.fallingTetrominoRow + 1].filter((block, columnIndex) => {
-        if (block !== "." && this.board[this.fallingTetrominoRow][columnIndex] !== ".") return true;
-        return false;
-      }).length
-    ) {
+    if (!this.tetrominoFalling) {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
       return false;
