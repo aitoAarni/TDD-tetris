@@ -47,6 +47,7 @@ export class Board {
     const rowStart = this.fallingTetrominoRow - (this.fallingTetromino.size - 1);
     this.fallingTetromino.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
+        if (block === ".") return;
         
       });
     });
