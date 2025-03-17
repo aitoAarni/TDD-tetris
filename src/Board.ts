@@ -104,11 +104,13 @@ export class Board {
     } else return false;
   }
 
-  iterateTetrominoShape(callback: () => void) {
+  iterateTetrominoShape(callback: (block: string, rowIndex: number, columnIndex: number) => void) {
     if (!this.fallingTetromino) return;
     this.fallingTetromino as RotatingShape;
     this.fallingTetromino.shape.forEach((row, rowIndex) => {
-      row.forEach((block, columnIndex) => {});
+      row.forEach((block, columnIndex) => {
+        callback(block, rowIndex, columnIndex);
+      });
     });
   }
 }
