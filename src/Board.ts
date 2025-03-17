@@ -110,7 +110,7 @@ export class Board {
   drawFallingTetromino() {
     if (!this.fallingTetromino) return;
     const rowStart = this.fallingTetrominoRow + 1 - this.fallingTetromino.size;
-    const columnStart = Math.floor((this.width - this.fallingTetromino.size) / 2);
+    const columnStart = this.tetrominoStartColumn;
     const drawBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block !== ".") {
         this.board[rowStart + rowIndex][columnStart + columnIndex] = block;
