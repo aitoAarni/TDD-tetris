@@ -1,7 +1,8 @@
-/* import { beforeEach, describe, test } from "vitest";
+import { beforeEach, describe, test } from "vitest";
 import { expect } from "chai";
 import { Board } from "../src/Board";
 import { RotatingShape } from "../src/RotatingShape";
+import { ANY_shape } from "../src/Tetromino";
 
 describe("Falling blocks", () => {
   let board;
@@ -20,7 +21,7 @@ describe("Falling blocks", () => {
   
   describe("When a block is dropped", () => {
   beforeEach(() => {
-      board.drop(RotatingShape.fromString("X"));
+      board.drop(new ANY_shape(RotatingShape.fromString("X")));
     });
 
     test("it starts from the top middle", () => {
@@ -43,7 +44,7 @@ describe("Falling blocks", () => {
 
     test("at most one block may be falling at a time", () => {
       const before = board.toString();
-      expect(() => board.drop(RotatingShape.fromString("Y"))).to.throw("already falling");
+      expect(() => board.drop(new ANY_shape(RotatingShape.fromString("Y"))).to.throw("already falling"));
       const after = board.toString();
       expect(after).to.equal(before);
     });
@@ -51,7 +52,7 @@ describe("Falling blocks", () => {
   
   describe("When a block reaches the bottom", () => {
     beforeEach(() => {
-      board.drop(RotatingShape.fromString("X"));
+      board.drop(new ANY_shape(RotatingShape.fromString("X")));
       board.tick();
       board.tick();
     });
@@ -81,11 +82,11 @@ describe("Falling blocks", () => {
   
   describe("When a block lands on another block", () => {
     beforeEach(() => {
-      board.drop(RotatingShape.fromString("X"));
+      board.drop(new ANY_shape(RotatingShape.fromString("X")));
       board.tick();
       board.tick();
       board.tick();
-      board.drop(RotatingShape.fromString("Y"));
+      board.drop(new ANY_shape(RotatingShape.fromString("Y")));
       board.tick();
     });
 
@@ -109,4 +110,4 @@ describe("Falling blocks", () => {
       expect(board.hasFalling(), "the block should stop moving").to.be.false;
     });
   });
-}) */
+}) 
