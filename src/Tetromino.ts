@@ -31,24 +31,24 @@ class I_shape {
 }
 
 class O_shape {
-    shape: RotatingShape
+    rotatingShape: RotatingShape
     size: number
 
-    constructor(shape: RotatingShape){
-        this.shape = shape
-        this.size = shape.size
+    constructor(rotatingShape: RotatingShape){
+        this.rotatingShape = rotatingShape
+        this.size = rotatingShape.size
 
     }
     rotateRight() {
-        return new O_shape(new RotatingShape(this.shape.shape))
+        return new O_shape(new RotatingShape(this.rotatingShape.shape))
     }
 
     rotateLeft() {
-        return new O_shape(new RotatingShape(this.shape.shape))
+        return new O_shape(new RotatingShape(this.rotatingShape.shape))
     }
 
     toString(){
-        return this.shape.toString()
+        return this.rotatingShape.toString()
     }
 }
 
