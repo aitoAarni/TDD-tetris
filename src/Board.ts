@@ -49,7 +49,6 @@ export class Board {
     this.fallingTetrominoRow++;
     this.moveFallingTetromino();
   }
-  
   removeFallingTetromino() {
     if (this.fallingTetromino === null) {
       return;

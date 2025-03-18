@@ -61,11 +61,11 @@ class T_shape {
     }
 
     rotateRight() {
-        return new T_shape(new RotatingShape(this.rotatingShape.shape))
+        return new T_shape(this.rotatingShape.rotateRight())
     }
 
     rotateLeft() {
-        return new T_shape(new RotatingShape(this.rotatingShape.shape))
+        return new T_shape(this.rotatingShape.rotateLeft())
     }
 
     toString() {
