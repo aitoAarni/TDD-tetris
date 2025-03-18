@@ -63,6 +63,12 @@ export class Board {
     this.placeFallingTetromino();
   }
 
+  moveDown() {
+    this.removeFallingTetromino();
+    this.fallingTetrominoRow++;
+    this.placeFallingTetromino();
+  }
+
   removeFallingTetromino() {
     if (this.fallingTetromino === null) {
       return;

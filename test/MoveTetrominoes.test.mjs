@@ -4,33 +4,46 @@ import { Board } from "../src/Board";
 import { Tetromino } from "../src/Tetromino";
 
 describe("Move tetromino", () => {
-    let board
-    beforeEach(() => {
-        board = new Board(10,6)
-    })
-    test("Falling tetromino can be moved left", () => {
-        board.drop(Tetromino.T_SHAPE)
-        board.moveLeft()
-        expect(board.toString()).to.equalShape(
-            `...T......
+  let board;
+  beforeEach(() => {
+    board = new Board(10, 6);
+  });
+  test("Falling tetromino can be moved left", () => {
+    board.drop(Tetromino.T_SHAPE);
+    board.moveLeft();
+    expect(board.toString()).to.equalShape(
+      `...T......
              ..TTT.....
              ..........
              ..........
              ..........
              ..........`
-          );
-    })
+    );
+  });
 
-    test("Falling tetromino can be moved right", () => {
-        board.drop(Tetromino.T_SHAPE)
-        board.moveRight()
-        expect(board.toString()).to.equalShape(
-            `.....T....
+  test("Falling tetromino can be moved right", () => {
+    board.drop(Tetromino.T_SHAPE);
+    board.moveRight();
+    expect(board.toString()).to.equalShape(
+      `.....T....
              ....TTT...
              ..........
              ..........
              ..........
              ..........`
-          );
-    })
-})
+    );
+  });
+  test("Falling tetromino can be moved down", () => {
+    board.drop(Tetromino.T_SHAPE);
+    board.moveDown();
+    expect(board.toString()).to.equalShape(
+      `..........
+             ....T.....
+             ...TTT....
+             ..........
+             ..........
+             ..........
+             `
+    );
+  });
+});
