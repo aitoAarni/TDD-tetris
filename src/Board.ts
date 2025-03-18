@@ -51,6 +51,12 @@ export class Board {
     this.placeFallingTetromino();
   }
 
+  moveRight() {
+    this.removeFallingTetromino();
+    this.tetrominoStartColumn++;
+    this.placeFallingTetromino();
+  }
+
   moveLeft() {
     this.removeFallingTetromino();
     this.tetrominoStartColumn--;
