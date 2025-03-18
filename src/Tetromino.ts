@@ -73,6 +73,15 @@ class T_shape {
     }
 }
 
+class ANY_shape {
+    rotatingShape: RotatingShape
+    size: number
+    constructor(rotatingShape: RotatingShape){
+        this.rotatingShape = rotatingShape
+        this.size = rotatingShape.size
+    }
+}
+
 export type TetrominoShape = I_shape | O_shape | T_shape
 
 export class Tetromino {
