@@ -34,7 +34,7 @@ export class Board {
     this.tetrominoStartColumn = Math.floor((this.width - this.fallingTetromino.size) / 2);
     this.fallingTetrominoRow = tetromino.size - 1;
     this.tetrominoFalling = true;
-    this.drawFallingTetromino();
+    this.placeFallingTetromino();
   }
 
   tick() {
@@ -48,13 +48,13 @@ export class Board {
     }
     this.removeFallingTetromino();
     this.fallingTetrominoRow++;
-    this.drawFallingTetromino();
+    this.placeFallingTetromino();
   }
 
   moveLeft() {
     this.removeFallingTetromino();
     this.tetrominoStartColumn--;
-    this.drawFallingTetromino();
+    this.placeFallingTetromino();
   }
 
   removeFallingTetromino() {
@@ -108,7 +108,7 @@ export class Board {
     return canMoveDownBool;
   }
 
-  drawFallingTetromino() {
+  placeFallingTetromino() {
     if (!this.fallingTetromino?.rotatingShape) return;
     const rowStart = this.fallingTetrominoRow + 1 - this.fallingTetromino.size;
     const columnStart = this.tetrominoStartColumn;
