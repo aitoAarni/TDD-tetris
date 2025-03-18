@@ -46,9 +46,9 @@ export class Board {
       this.fallingTetrominoRow = 0;
       return false;
     }
-    this.removeFallingTetromino()
+    this.removeFallingTetromino();
     this.fallingTetrominoRow++;
-    this.drawFallingTetromino()
+    this.drawFallingTetromino();
   }
   removeFallingTetromino() {
     if (this.fallingTetromino === null) {
@@ -61,12 +61,6 @@ export class Board {
       this.board[rowStart + rowIndex][columnStart + columnIndex] = ".";
     };
     this.iterateTetrominoShape(removeBlock);
-  }
-
-  moveFallingTetromino() {
-    if (!this.fallingTetromino?.rotatingShape) return;
-    this.removeFallingTetromino();
-    this.drawFallingTetromino();
   }
 
   hasFalling() {
