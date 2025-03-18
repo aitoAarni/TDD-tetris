@@ -80,6 +80,16 @@ class ANY_shape {
         this.rotatingShape = rotatingShape
         this.size = rotatingShape.size
     }
+
+    rotateRight() {
+        return new T_shape(this.rotatingShape.rotateRight())
+    }
+    rotateLeft() {
+        return new T_shape(this.rotatingShape.rotateLeft())
+    }
+    toString() {
+        return this.rotatingShape.toString()
+    }
 }
 
 export type TetrominoShape = I_shape | O_shape | T_shape
