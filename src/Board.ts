@@ -1,4 +1,5 @@
 import { RotatingShape } from "./RotatingShape";
+import { TetrominoShape } from "./Tetromino";
 
 export class Board {
   width: number;
@@ -6,7 +7,7 @@ export class Board {
   board: string[][];
   tetrominoFalling: boolean;
   fallingTetrominoRow: number;
-  fallingTetromino: RotatingShape | null;
+  fallingTetromino: TetrominoShape | null;
   tetrominoStartColumn;
   constructor(width: number, height: number) {
     this.width = width;
