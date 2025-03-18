@@ -69,7 +69,7 @@ class T_shape {
     }
 
     toString() {
-        return this.rotatingShape.shape.toString()
+        return this.rotatingShape.toString()
     }
 }
 
