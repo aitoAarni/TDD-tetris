@@ -50,6 +50,13 @@ export class Board {
     this.fallingTetrominoRow++;
     this.drawFallingTetromino();
   }
+
+  moveLeft() {
+    this.removeFallingTetromino();
+    this.tetrominoStartColumn--;
+    this.drawFallingTetromino();
+  }
+
   removeFallingTetromino() {
     if (this.fallingTetromino === null) {
       return;
