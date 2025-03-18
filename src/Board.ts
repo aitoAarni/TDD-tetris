@@ -1,4 +1,3 @@
-import { RotatingShape } from "./RotatingShape";
 import { TetrominoShape } from "./Tetromino";
 
 export class Board {
@@ -27,7 +26,7 @@ export class Board {
     return boardString;
   }
 
-  drop(tetromino: RotatingShape) {
+  drop(tetromino: TetrominoShape) {
     if (this.tetrominoFalling) {
       throw new Error("already falling");
     }
@@ -77,7 +76,7 @@ export class Board {
 
   iterateTetrominoShape(callback: (block: string, rowIndex: number, columnIndex: number) => void) {
     if (!this.fallingTetromino) return;
-    this.fallingTetromino as RotatingShape;
+    this.fallingTetromino as TetrominoShape;
     this.fallingTetromino.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
         callback(block, rowIndex, columnIndex);
@@ -95,7 +94,7 @@ export class Board {
       if (this.height - 1 <= rowIndex + rowStart) {
         canMoveDownBool = false;
       } else if (
-        (this.fallingTetromino as RotatingShape).size - 1 > rowIndex &&
+        (this.fallingTetromino as TetrominoShape).size - 1 > rowIndex &&
         this.fallingTetromino?.shape[rowIndex + 1][columnIndex] !== "."
       )
         return;
