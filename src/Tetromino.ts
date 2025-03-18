@@ -73,7 +73,7 @@ class T_shape {
     }
 }
 
-class ANY_shape {
+export class ANY_shape {
     rotatingShape: RotatingShape
     size: number
     constructor(rotatingShape: RotatingShape){
@@ -88,7 +88,7 @@ class ANY_shape {
     rotateLeft() {
         return new T_shape(this.rotatingShape.rotateLeft())
     }
-    
+
     toString() {
         return this.rotatingShape.toString()
     }
