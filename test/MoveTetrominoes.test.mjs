@@ -3,6 +3,12 @@ import { expect } from "chai";
 import { Board } from "../src/Board";
 import { Tetromino } from "../src/Tetromino";
 
+const callCallback8Times = (callback) => {
+    for (let i = 0; i<10; i++){
+        callback()
+    }
+}
+
 describe("Move tetromino", () => {
   let board;
   beforeEach(() => {
@@ -46,4 +52,10 @@ describe("Move tetromino", () => {
              `
     );
   });
+  describe("Tetromino can't be moved beyond board", () => {
+
+    test("It cannot be moved left beyond the board", () => {
+
+    })
+  })
 });
