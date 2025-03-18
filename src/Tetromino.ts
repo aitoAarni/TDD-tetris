@@ -76,9 +76,9 @@ class T_shape {
 export type TetrominoShape = I_shape | O_shape | T_shape
 
 export class Tetromino {
-  static T_SHAPE = RotatingShape.fromString(`.T.
+  static T_SHAPE = new T_shape(RotatingShape.fromString(`.T.
                                         TTT
-                                        ...`)
+                                        ...`))
 
   static I_SHAPE = new I_shape(RotatingShape.fromString(`.....
                                             .....

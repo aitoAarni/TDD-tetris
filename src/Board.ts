@@ -38,7 +38,7 @@ export class Board {
   }
 
   tick() {
-    if (!this.fallingTetromino) return;
+    if (!this.fallingTetromino?.rotatingShape) return;
 
     const moveDown = this.canMoveDown();
     if (!moveDown || !this.tetrominoFalling) {
@@ -63,7 +63,7 @@ export class Board {
   }
 
   moveFallingTetromino() {
-    if (!this.fallingTetromino) return;
+    if (!this.fallingTetromino?.rotatingShape) return;
     this.removeFallingTetromino();
     this.drawFallingTetromino();
   }
@@ -75,9 +75,9 @@ export class Board {
   }
 
   iterateTetrominoShape(callback: (block: string, rowIndex: number, columnIndex: number) => void) {
-    if (!this.fallingTetromino) return;
+    if (!this.fallingTetromino?.rotatingShape) return;
     this.fallingTetromino as TetrominoShape;
-    this.fallingTetromino.shape.forEach((row, rowIndex) => {
+    this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
         callback(block, rowIndex, columnIndex);
       });
@@ -85,7 +85,7 @@ export class Board {
   }
 
   canMoveDown() {
-    if (!this.fallingTetromino) return false;
+    if (!this.fallingTetromino?.rotatingShape) return false;
     let canMoveDownBool = true;
     const columnStart = this.tetrominoStartColumn;
     const rowStart = this.fallingTetrominoRow - (this.fallingTetromino.size - 1);
@@ -95,7 +95,7 @@ export class Board {
         canMoveDownBool = false;
       } else if (
         (this.fallingTetromino as TetrominoShape).size - 1 > rowIndex &&
-        this.fallingTetromino?.shape[rowIndex + 1][columnIndex] !== "."
+        this.fallingTetromino?.rotatingShape.shape[rowIndex + 1][columnIndex] !== "."
       )
         return;
       else if (this.board[rowStart + rowIndex + 1][columnStart + columnIndex] !== ".") {
@@ -107,7 +107,7 @@ export class Board {
   }
 
   drawFallingTetromino() {
-    if (!this.fallingTetromino) return;
+    if (!this.fallingTetromino?.rotatingShape) return;
     const rowStart = this.fallingTetrominoRow + 1 - this.fallingTetromino.size;
     const columnStart = this.tetrominoStartColumn;
     const drawBlock = (block: string, rowIndex: number, columnIndex: number) => {
