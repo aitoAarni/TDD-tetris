@@ -46,14 +46,15 @@ export class Board {
       this.fallingTetrominoRow = 0;
       return false;
     }
+    this.removeFallingTetromino()
     this.fallingTetrominoRow++;
-    this.moveFallingTetromino();
+    this.drawFallingTetromino()
   }
   removeFallingTetromino() {
     if (this.fallingTetromino === null) {
       return;
     }
-    const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size;
+    const rowStart = this.fallingTetrominoRow + 1 - this.fallingTetromino.size;
     const columnStart = this.tetrominoStartColumn;
     const removeBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
