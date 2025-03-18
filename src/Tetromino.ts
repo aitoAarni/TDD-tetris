@@ -67,6 +67,10 @@ class T_shape {
     rotateLeft() {
         return new T_shape(new RotatingShape(this.rotatingShape.shape))
     }
+
+    toString() {
+        return this.rotatingShape.shape.toString()
+    }
 }
 
 export class Tetromino {
