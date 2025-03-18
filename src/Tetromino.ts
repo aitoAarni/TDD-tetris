@@ -52,6 +52,15 @@ class O_shape {
     }
 }
 
+class T_shape {
+    shape: string[][]
+    size: number
+    constructor(shape: string[][]){
+        this.shape = shape
+        this.size = shape.length
+    }
+}
+
 export class Tetromino {
   static T_SHAPE = RotatingShape.fromString(`.T.
                                         TTT
