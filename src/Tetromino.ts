@@ -53,11 +53,15 @@ class O_shape {
 }
 
 class T_shape {
-    shape: string[][]
+    shape: RotatingShape
     size: number
-    constructor(shape: string[][]){
+    constructor(shape: RotatingShape){
         this.shape = shape
-        this.size = shape.length
+        this.size = shape.size
+    }
+
+    rotateRight() {
+        return new T_shape(new RotatingShape(this.shape.shape))
     }
 }
 
