@@ -97,6 +97,16 @@ export class Board {
   }
 
   touchingBlockOnLeft() {
+    let blockOnLeft = false;
+    const rowStart = this.fallingTetrominoRow - (this.fallingTetromino ? this.fallingTetromino.size : 0) + 1;
+    this.fallingTetromino?.rotatingShape.shape.forEach((row, rowIndex) => {
+      row.forEach((block, columnIndex) => {
+        if (block === ".") return;
+        if (columnIndex > 0 && this.fallingTetromino?.rotatingShape.shape[rowIndex][columnIndex - 1] !== ".") return;
+        if (
+          this.tetrominoStartColumn + columnIndex > 0 &&
+          this.board[rowStart + rowIndex][this.tetrominoStartColumn + columnIndex - 1] !== "."
+        ) {blockOnLeft = true;}});});
     
   }
 
