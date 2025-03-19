@@ -210,7 +210,7 @@ export class Board {
       }
     });
     const intertwinedBlocks2 = this.intertwinedBlocks()
-    if (intertwinedBlocks) {
+    if (intertwinedBlocks2) {
       this.fallingTetromino = currentShape;
     }
     this.placeFallingTetromino();
