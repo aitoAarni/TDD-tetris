@@ -83,9 +83,12 @@ export class Board {
   }
 
   moveDown() {
-    this.removeFallingTetromino();
-    this.fallingTetrominoRow++;
-    this.placeFallingTetromino();
+    const canMoveDown = this.canMoveDown();
+    if (canMoveDown) {
+      this.removeFallingTetromino();
+      this.fallingTetrominoRow++;
+      this.placeFallingTetromino();
+    }
   }
 
   removeFallingTetromino() {
