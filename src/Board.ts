@@ -74,7 +74,6 @@ export class Board {
   touchingBlockOnRight() {
     let blockOnRight = false;
     if (this.fallingTetromino === null) return;
-    const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size + 1;
     this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
       if (
@@ -84,7 +83,7 @@ export class Board {
         return;
       if (
         this.tetrominoStartColumn + columnIndex < this.width - 1 &&
-        this.board[rowStart + rowIndex][this.tetrominoStartColumn + columnIndex + 1] !== "."
+        this.board[this.fallingTetrominoRow2 + rowIndex][this.tetrominoStartColumn + columnIndex + 1] !== "."
       ) {
         blockOnRight = true;
       }
