@@ -222,5 +222,6 @@ export class Board {
         intertwinedBlocks = true;
       }
     });
+    return intertwinedBlocks
   }
 }
