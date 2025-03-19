@@ -202,14 +202,7 @@ export class Board {
     this.removeFallingTetromino();
     const currentShape = this.fallingTetromino;
     this.fallingTetromino = this.fallingTetromino.rotateLeft();
-    let intertwinedBlocks = false
-    this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
-      if (block === ".") return;
-      if (this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex] !== ".") {
-        intertwinedBlocks = true;
-      }
-    });
-    const intertwinedBlocks2 = this.intertwinedBlocks()
+    const intertwinedBlocks2 = this.intertwinedBlocks();
     if (intertwinedBlocks2) {
       this.fallingTetromino = currentShape;
     }
@@ -223,6 +216,6 @@ export class Board {
         intertwinedBlocks = true;
       }
     });
-    return intertwinedBlocks
+    return intertwinedBlocks;
   }
 }
