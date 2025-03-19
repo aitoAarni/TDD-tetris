@@ -84,6 +84,11 @@ export class Board {
     });
     return touchingBorder;
   }
+
+  touchingBlockOnRight() {
+    
+  }
+
   moveLeft() {
     const touchingLeftBorer = this.touchingLeftBorer();
     const blockOnLeft = this.touchingBlockOnLeft();
