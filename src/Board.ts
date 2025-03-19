@@ -202,8 +202,8 @@ export class Board {
     this.removeFallingTetromino();
     const currentShape = this.fallingTetromino;
     this.fallingTetromino = this.fallingTetromino.rotateLeft();
-    const intertwinedBlocks2 = this.intertwinedBlocks();
-    if (intertwinedBlocks2) {
+    const intertwinedBlocks = this.intertwinedBlocks();
+    if (intertwinedBlocks) {
       this.fallingTetromino = currentShape;
     }
     this.placeFallingTetromino();
