@@ -72,22 +72,21 @@ export class Board {
     let blockOnRight = false;
     if (this.fallingTetromino === null) return;
     const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size + 1;
-    this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
-      row.forEach((block, columnIndex) => {
-        if (block === ".") return;
-        if (
+    this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
+
+      if (block === ".") return;
+      if (
           columnIndex < (this.fallingTetromino as TetrominoShape).size - 1 &&
           this.fallingTetromino?.rotatingShape.shape[rowIndex][columnIndex + 1] !== "."
         )
           return;
-        if (
+          if (
           this.tetrominoStartColumn + columnIndex < this.width - 1 &&
           this.board[rowStart + rowIndex][this.tetrominoStartColumn + columnIndex + 1] !== "."
         ) {
           blockOnRight = true;
         }
-      });
-    });
+        })
     return blockOnRight;
   }
 
