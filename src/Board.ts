@@ -66,7 +66,6 @@ export class Board {
     return touchingBorder;
   }
   moveLeft() {
-    if (!this.fallingTetromino) return;
     const touchingLeftBorer = this.touchingLeftBorer();
     if (touchingLeftBorer) return;
     this.removeFallingTetromino();
