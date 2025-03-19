@@ -51,7 +51,16 @@ export class Board {
 
   moveRight() {
     const touchingRightBorder = this.touchingRightBorder();
-    if (touchingRightBorder) return;
+    let blockOnRight = false;
+    if (this.fallingTetromino === null) return;
+    const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size + 1;
+    this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
+      row.forEach((block, columnIndex) => {
+        if (block === ".") return;
+        if (columnIndex < (this.fallingTetromino as TetrominoShape).size - 1 && this.fallingTetromino?.rotatingShape.shape[rowIndex][columnIndex + 1] !== ".") return;
+        if (this.tetrominoStartColumn + columnIndex < this.width - 1 &&
+          this.board[rowStart + rowIndex][this.tetrominoStartColumn + columnIndex + 1] !== ".") {blockOnRight = true;}});});
+    if (touchingRightBorder || blockOnRight) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn++;
     this.placeFallingTetromino();

@@ -106,7 +106,7 @@ describe("Move tetromino", () => {
       board.tick();
       board.moveLeft();
       board.tick();
-      board.moveLeft()
+      board.moveLeft();
       expect(board.toString()).to.equalShape(
         `..........
         ..........
@@ -115,6 +115,29 @@ describe("Move tetromino", () => {
         .TTTTT....
         ..T.......
 `
+      );
+    });
+    test.only("Tetromino cannot be moved right through other blocks", () => {
+      board.drop(Tetromino.T_SHAPE.rotateRight());
+      board.moveRight();
+      board.moveRight();
+      board.tick();
+      board.tick();
+      board.tick();
+      board.tick();
+      board.drop(Tetromino.T_SHAPE);
+      board.tick();
+      board.tick();
+      board.moveRight();
+      board.moveRight();
+      expect(board.toString()).to.equalShape(
+        `
+            ..........
+            ..........
+            ....T.....
+            ...TTTT...
+            ......TT..
+            ......T...`
       );
     });
   });
