@@ -81,6 +81,7 @@ export class Board {
         }
       });
     });
+    const blockOnLeft2 = this.touchingBlockOnLeft()
     if (touchingLeftBorer || blockOnLeft) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn--;
