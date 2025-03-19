@@ -188,11 +188,10 @@ export class Board {
 
   placeFallingTetromino() {
     if (!this.fallingTetromino?.rotatingShape) return;
-    const rowStart = this.fallingTetrominoRow + 1 - this.fallingTetromino.size;
     const columnStart = this.tetrominoStartColumn;
     const drawBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block !== ".") {
-        this.board[rowStart + rowIndex][columnStart + columnIndex] = block;
+        this.board[this.fallingTetrominoRow2 + rowIndex][columnStart + columnIndex] = block;
       }
     };
     this.iterateTetrominoShape(drawBlock);
