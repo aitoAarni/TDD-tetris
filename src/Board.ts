@@ -50,11 +50,21 @@ export class Board {
   }
 
   moveRight() {
+    const touchingRightBorder = this.touchingRightBorder()
+    if (touchingRightBorder) return
     this.removeFallingTetromino();
     this.tetrominoStartColumn++;
     this.placeFallingTetromino();
   }
 
+  touchingRightBorder() {
+    let touchingBorder = false
+    this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
+      if (block === ".") return
+      if(this.tetrominoStartColumn+columnIndex >= this.width-1) touchingBorder = true
+    })
+    return touchingBorder
+  }
   moveLeft() {
     if (!this.fallingTetromino) return;
     const touchingLeftBorer = this.touchingLeftBorer()
