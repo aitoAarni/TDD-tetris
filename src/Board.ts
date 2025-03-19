@@ -58,7 +58,7 @@ export class Board {
   moveLeft() {
     if (!this.fallingTetromino) return;
     let touchingBorder = false;
-    this.fallingTetromino?.rotatingShape.shape.forEach((row, rowIndex) => {
+    this.fallingTetromino.rotatingShape.shape.forEach((row) => {
       row.forEach((block, columnIndex) => {
         if (block === ".") return;
         if (this.tetrominoStartColumn + columnIndex <= 0) touchingBorder = true;
