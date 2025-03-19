@@ -57,15 +57,20 @@ export class Board {
 
   moveLeft() {
     if (!this.fallingTetromino) return;
+    const touchingLeftBorer = this.touchingLeftBorer()
+    if (touchingLeftBorer) return;
+    this.removeFallingTetromino();
+    this.tetrominoStartColumn--;
+    this.placeFallingTetromino();
+  }
+
+  touchingLeftBorer() {
     let touchingBorder = false;
     this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
       if (this.tetrominoStartColumn + columnIndex <= 0) touchingBorder = true;
     });
-    if (touchingBorder) return;
-    this.removeFallingTetromino();
-    this.tetrominoStartColumn--;
-    this.placeFallingTetromino();
+    return touchingBorder
   }
 
   moveDown() {
