@@ -3,12 +3,6 @@ import { expect } from "chai";
 import { Board } from "../src/Board";
 import { Tetromino } from "../src/Tetromino";
 
-const callCallback8Times = (callback) => {
-  for (let i = 0; i < 10; i++) {
-    callback();
-  }
-};
-
 describe("Move tetromino", () => {
   let board;
   beforeEach(() => {
@@ -94,6 +88,32 @@ describe("Move tetromino", () => {
              ..........
              ....T.....
              ...TTT....
+`
+      );
+    });
+  });
+  describe("Tetromino cannot be moved through other blocks", () => {
+    test("Tetromino cannot be moved left through other blocks", () => {
+      board.drop(Tetromino.T_SHAPE.rotateLeft());
+      board.moveLeft();
+      board.moveLeft();
+      board.tick();
+      board.tick();
+      board.tick();
+      board.tick();
+      board.drop(Tetromino.T_SHAPE);
+      board.tick();
+      board.tick();
+      board.moveLeft();
+      board.tick();
+      board.moveLeft()
+      expect(board.toString()).to.equalShape(
+        `..........
+        ..........
+        ..........
+        ..T.T.....
+        .TTTTT....
+        ..T.......
 `
       );
     });
