@@ -82,7 +82,7 @@ export class Board {
       });
     });
     const blockOnLeft2 = this.touchingBlockOnLeft()
-    if (touchingLeftBorer || blockOnLeft) return;
+    if (touchingLeftBorer || blockOnLeft2) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn--;
     this.placeFallingTetromino();
