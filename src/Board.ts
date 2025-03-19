@@ -96,6 +96,10 @@ export class Board {
     return touchingBorder;
   }
 
+  touchingBlockOnLeft() {
+    
+  }
+
   moveDown() {
     const canMoveDown = this.canMoveDown();
     if (canMoveDown) {
