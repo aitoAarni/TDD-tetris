@@ -199,9 +199,17 @@ export class Board {
   }
   rotateLeft() {
     if (!this.fallingTetromino) return;
-    const rotatedShape = this.fallingTetromino.rotateLeft();
     this.removeFallingTetromino();
-    this.fallingTetromino = rotatedShape;
+    const currentShape = this.fallingTetromino
+    this.fallingTetromino = this.fallingTetromino.rotateLeft()
+    let intertwinedBlocks = false;
+    this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
+      if (block === ".") return;
+      if (this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex] !== ".") {
+        intertwinedBlocks = true; }});
+    if (intertwinedBlocks) {
+      this.fallingTetromino = currentShape
+    }
     this.placeFallingTetromino();
   }
 }

@@ -18,7 +18,7 @@ describe("Falling and Rotating tetrominoes", () => {
             ..........
             ..........`);
   });
-  test("Falling tetromino can be rotated right", () => {
+  test("Falling tetromino can be rotated left", () => {
     board.drop(Tetromino.T_SHAPE);
     board.rotateLeft();
     expect(board.toString()).to.equalShape(`
@@ -29,9 +29,10 @@ describe("Falling and Rotating tetrominoes", () => {
             ..........`);
   });
   describe("Cannot be rotated through other blocks", () => {
-    test.skip("Tetromino can't be rotated left through other blocks", () => {
+    test("Tetromino can't be rotated left through other blocks", () => {
       board.drop(Tetromino.T_SHAPE);
       board.rotateLeft();
+      board.tick();
       board.tick();
       board.tick();
       board.tick();
