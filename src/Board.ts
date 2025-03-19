@@ -192,17 +192,16 @@ export class Board {
     this.iterateTetrominoShape(drawBlock);
   }
   rotateRight() {
-    if (!this.fallingTetromino) return
-    this.removeFallingTetromino()
-    this.fallingTetromino = this.fallingTetromino.rotateRight()
-    this.placeFallingTetromino()
+    if (!this.fallingTetromino) return;
+    this.removeFallingTetromino();
+    this.fallingTetromino = this.fallingTetromino.rotateRight();
+    this.placeFallingTetromino();
   }
   rotateLeft() {
-    if (!this.fallingTetromino) return
-    this.removeFallingTetromino()
-    this.fallingTetromino = this.fallingTetromino.rotateLeft()
-    this.placeFallingTetromino()
-    
+    if (!this.fallingTetromino) return;
+    const rotatedShape = this.fallingTetromino.rotateLeft();
+    this.removeFallingTetromino();
+    this.fallingTetromino = rotatedShape;
+    this.placeFallingTetromino();
   }
-  
 }
