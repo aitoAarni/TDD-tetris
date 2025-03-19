@@ -51,14 +51,7 @@ export class Board {
 
   moveRight() {
     const touchingRightBorder = this.touchingRightBorder();
-    let blockOnRight = false;
-    if (this.fallingTetromino === null) return;
-    const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size + 1;
-    this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
-      row.forEach((block, columnIndex) => {
 
-      });
-    });
     const blockOnRight2 = this.touchingBlockOnRight()
     if (touchingRightBorder || blockOnRight2) return;
     this.removeFallingTetromino();
