@@ -5,7 +5,7 @@ export class Board {
   height: number;
   board: string[][];
   tetrominoFalling: boolean;
-  fallingTetrominoRow2: number;
+  fallingTetrominoRow: number;
   fallingTetromino: TetrominoShape | null;
   tetrominoStartColumn;
   constructor(width: number, height: number) {
@@ -13,7 +13,7 @@ export class Board {
     this.height = height;
     this.board = new Array(height).fill(null).map(() => new Array(width).fill("."));
     this.tetrominoFalling = false;
-    this.fallingTetrominoRow2 = 0;
+    this.fallingTetrominoRow = 0;
     this.fallingTetromino = null;
     this.tetrominoStartColumn = 0;
   }
@@ -42,7 +42,7 @@ export class Board {
     const moveDown = this.canMoveDown();
     if (!moveDown || !this.tetrominoFalling) {
       this.tetrominoFalling = false;
-      this.fallingTetrominoRow2 = 0;
+      this.fallingTetrominoRow = 0;
       return false;
     }
     this.moveDown();
@@ -79,7 +79,7 @@ export class Board {
         return;
       if (
         this.tetrominoStartColumn + columnIndex < this.width - 1 &&
-        this.board[this.fallingTetrominoRow2 + rowIndex][this.tetrominoStartColumn + columnIndex + 1] !== "."
+        this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex + 1] !== "."
       ) {
         blockOnRight = true;
       }
@@ -114,7 +114,7 @@ export class Board {
         if (columnIndex > 0 && this.fallingTetromino?.rotatingShape.shape[rowIndex][columnIndex - 1] !== ".") return;
         if (
           this.tetrominoStartColumn + columnIndex > 0 &&
-          this.board[this.fallingTetrominoRow2 + rowIndex][this.tetrominoStartColumn + columnIndex - 1] !== "."
+          this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex - 1] !== "."
         ) {
           blockOnLeft = true;
         }
@@ -127,7 +127,7 @@ export class Board {
     const canMoveDown = this.canMoveDown();
     if (canMoveDown) {
       this.removeFallingTetromino();
-      this.fallingTetrominoRow2++;
+      this.fallingTetrominoRow++;
       this.placeFallingTetromino();
     }
   }
@@ -139,7 +139,7 @@ export class Board {
     const columnStart = this.tetrominoStartColumn;
     const removeBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
-      this.board[this.fallingTetrominoRow2 + rowIndex][columnStart + columnIndex] = ".";
+      this.board[this.fallingTetrominoRow + rowIndex][columnStart + columnIndex] = ".";
     };
     this.iterateTetrominoShape(removeBlock);
   }
@@ -166,14 +166,14 @@ export class Board {
     const columnStart = this.tetrominoStartColumn;
     const CheckBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
-      if (this.height - 1 <= rowIndex + this.fallingTetrominoRow2) {
+      if (this.height - 1 <= rowIndex + this.fallingTetrominoRow) {
         canMoveDownBool = false;
       } else if (
         (this.fallingTetromino as TetrominoShape).size - 1 > rowIndex &&
         this.fallingTetromino?.rotatingShape.shape[rowIndex + 1][columnIndex] !== "."
       )
         return;
-      else if (this.board[this.fallingTetrominoRow2 + rowIndex + 1][columnStart + columnIndex] !== ".") {
+      else if (this.board[this.fallingTetrominoRow + rowIndex + 1][columnStart + columnIndex] !== ".") {
         canMoveDownBool = false;
       }
     };
@@ -186,7 +186,7 @@ export class Board {
     const columnStart = this.tetrominoStartColumn;
     const drawBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block !== ".") {
-        this.board[this.fallingTetrominoRow2 + rowIndex][columnStart + columnIndex] = block;
+        this.board[this.fallingTetrominoRow + rowIndex][columnStart + columnIndex] = block;
       }
     };
     this.iterateTetrominoShape(drawBlock);
