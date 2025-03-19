@@ -50,24 +50,24 @@ export class Board {
   }
 
   moveRight() {
-    const touchingRightBorder = this.touchingRightBorder()
-    if (touchingRightBorder) return
+    const touchingRightBorder = this.touchingRightBorder();
+    if (touchingRightBorder) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn++;
     this.placeFallingTetromino();
   }
 
   touchingRightBorder() {
-    let touchingBorder = false
+    let touchingBorder = false;
     this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
-      if (block === ".") return
-      if(this.tetrominoStartColumn+columnIndex >= this.width-1) touchingBorder = true
-    })
-    return touchingBorder
+      if (block === ".") return;
+      if (this.tetrominoStartColumn + columnIndex >= this.width - 1) touchingBorder = true;
+    });
+    return touchingBorder;
   }
   moveLeft() {
     if (!this.fallingTetromino) return;
-    const touchingLeftBorer = this.touchingLeftBorer()
+    const touchingLeftBorer = this.touchingLeftBorer();
     if (touchingLeftBorer) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn--;
@@ -80,7 +80,7 @@ export class Board {
       if (block === ".") return;
       if (this.tetrominoStartColumn + columnIndex <= 0) touchingBorder = true;
     });
-    return touchingBorder
+    return touchingBorder;
   }
 
   moveDown() {
