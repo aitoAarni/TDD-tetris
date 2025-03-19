@@ -105,6 +105,7 @@ export class Board {
         }
       });
     });
+    return blockOnRight;
   }
 
   moveLeft() {
