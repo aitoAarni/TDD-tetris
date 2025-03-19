@@ -86,7 +86,15 @@ export class Board {
   }
 
   touchingBlockOnRight() {
-    
+    let blockOnRight = false;
+    if (this.fallingTetromino === null) return;
+    const rowStart = this.fallingTetrominoRow - this.fallingTetromino.size + 1;
+    this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
+      row.forEach((block, columnIndex) => {
+  
+      });
+    });
+
   }
 
   moveLeft() {
