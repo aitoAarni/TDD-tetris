@@ -4,10 +4,10 @@ import { Board } from "../src/Board";
 import { Tetromino } from "../src/Tetromino";
 
 const callCallback8Times = (callback) => {
-    for (let i = 0; i<10; i++){
-        callback()
-    }
-}
+  for (let i = 0; i < 10; i++) {
+    callback();
+  }
+};
 
 describe("Move tetromino", () => {
   let board;
@@ -53,9 +53,19 @@ describe("Move tetromino", () => {
     );
   });
   describe("Tetromino can't be moved beyond board", () => {
-
     test("It cannot be moved left beyond the board", () => {
-
-    })
-  })
+      board.drop(Tetromino.T_SHAPE);
+      for (let i = 0; i < 10; i++) {
+        board.moveLeft();
+      }
+      expect(board.toString()).to.equalShape(
+        `.T........
+      TTT.......
+      ..........
+      ..........
+      ..........
+      ..........`
+      );
+    });
+  });
 });

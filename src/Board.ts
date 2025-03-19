@@ -46,7 +46,7 @@ export class Board {
       this.fallingTetrominoRow = 0;
       return false;
     }
-    this.moveDown()
+    this.moveDown();
   }
 
   moveRight() {
@@ -56,6 +56,15 @@ export class Board {
   }
 
   moveLeft() {
+    if (!this.fallingTetromino) return;
+    let touchingBorder = false;
+    this.fallingTetromino?.rotatingShape.shape.forEach((row, rowIndex) => {
+      row.forEach((block, columnIndex) => {
+        if (block === ".") return;
+        if (this.tetrominoStartColumn + columnIndex <= 0) touchingBorder = true;
+      });
+    });
+    if (touchingBorder) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn--;
     this.placeFallingTetromino();
