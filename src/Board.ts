@@ -52,8 +52,8 @@ export class Board {
   moveRight() {
     const touchingRightBorder = this.touchingRightBorder();
 
-    const blockOnRight2 = this.touchingBlockOnRight()
-    if (touchingRightBorder || blockOnRight2) return;
+    const blockOnRight = this.touchingBlockOnRight()
+    if (touchingRightBorder || blockOnRight) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn++;
     this.placeFallingTetromino();
