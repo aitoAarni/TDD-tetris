@@ -57,8 +57,11 @@ export class Board {
     this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
         if (block === ".") return;
-        if (columnIndex < (this.fallingTetromino as TetrominoShape).size - 1 &&
-          this.fallingTetromino?.rotatingShape.shape[rowIndex][columnIndex + 1] !== ".")return;
+        if (
+          columnIndex < (this.fallingTetromino as TetrominoShape).size - 1 &&
+          this.fallingTetromino?.rotatingShape.shape[rowIndex][columnIndex + 1] !== "."
+        )
+          return;
         if (
           this.tetrominoStartColumn + columnIndex < this.width - 1 &&
           this.board[rowStart + rowIndex][this.tetrominoStartColumn + columnIndex + 1] !== "."
