@@ -5,8 +5,7 @@ export class Board {
   height: number;
   board: string[][];
   tetrominoFalling: boolean;
-  fallingTetrominoRow: number;
-  fallingTetrominoRow2: numver;
+  fallingTetrominoRow2: number;
   fallingTetromino: TetrominoShape | null;
   tetrominoStartColumn;
   constructor(width: number, height: number) {
@@ -14,7 +13,6 @@ export class Board {
     this.height = height;
     this.board = new Array(height).fill(null).map(() => new Array(width).fill("."));
     this.tetrominoFalling = false;
-    this.fallingTetrominoRow = 0;
     this.fallingTetrominoRow2 = 0;
     this.fallingTetromino = null;
     this.tetrominoStartColumn = 0;
