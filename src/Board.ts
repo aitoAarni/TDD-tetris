@@ -106,8 +106,11 @@ export class Board {
         if (
           this.tetrominoStartColumn + columnIndex > 0 &&
           this.board[rowStart + rowIndex][this.tetrominoStartColumn + columnIndex - 1] !== "."
-        ) {blockOnLeft = true;}});});
-    
+        ) {
+          blockOnLeft = true;
+        }
+      });
+    });
   }
 
   moveDown() {
