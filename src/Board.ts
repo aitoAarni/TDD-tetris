@@ -191,4 +191,10 @@ export class Board {
     };
     this.iterateTetrominoShape(drawBlock);
   }
+  rotateRight() {
+    if (!this.fallingTetromino) return
+    this.removeFallingTetromino()
+    this.fallingTetromino = this.fallingTetromino.rotateRight()
+    this.placeFallingTetromino()
+  }
 }
