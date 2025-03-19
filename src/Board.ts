@@ -57,13 +57,6 @@ export class Board {
     this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
 
-          return;
-        if (
-          this.tetrominoStartColumn + columnIndex < this.width - 1 &&
-          this.board[rowStart + rowIndex][this.tetrominoStartColumn + columnIndex + 1] !== "."
-        ) {
-          blockOnRight = true;
-        }
       });
     });
     const blockOnRight2 = this.touchingBlockOnRight()
