@@ -117,7 +117,7 @@ describe("Move tetromino", () => {
 `
       );
     });
-    test.only("Tetromino cannot be moved right through other blocks", () => {
+    test("Tetromino cannot be moved right through other blocks", () => {
       board.drop(Tetromino.T_SHAPE.rotateRight());
       board.moveRight();
       board.moveRight();
