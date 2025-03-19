@@ -140,5 +140,27 @@ describe("Move tetromino", () => {
             ......T...`
       );
     });
+    test("Tetromino cannot be moved down through other blocks", () => {
+      board.drop(Tetromino.T_SHAPE)
+      board.tick();
+      board.tick();
+      board.tick();
+      board.tick();
+      board.tick();
+      board.drop(Tetromino.T_SHAPE);
+      board.moveDown()
+      board.moveDown()
+      board.moveDown()
+      board.moveDown()
+      expect(board.toString()).to.equalShape(
+        `
+            ..........
+            ..........
+            ....T.....
+            ...TTT....
+            ....T.....
+            ...TTT....`
+      );
+    });
   });
 });
