@@ -214,4 +214,7 @@ export class Board {
     }
     this.placeFallingTetromino();
   }
+  tetrominoIntertwinedWithBlock() {
+    
+  }
 }
