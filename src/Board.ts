@@ -67,7 +67,7 @@ export class Board {
   }
   moveLeft() {
     const touchingLeftBorer = this.touchingLeftBorer();
-    const blockOnLeft = this.touchingBlockOnLeft()
+    const blockOnLeft = this.touchingBlockOnLeft();
     if (touchingLeftBorer || blockOnLeft) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn--;
