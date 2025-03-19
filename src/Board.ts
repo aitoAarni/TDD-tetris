@@ -194,7 +194,12 @@ export class Board {
   rotateRight() {
     if (!this.fallingTetromino) return;
     this.removeFallingTetromino();
+    const currentShape = this.fallingTetromino;
     this.fallingTetromino = this.fallingTetromino.rotateRight();
+    const intertwinedBlocks = this.intertwinedBlocks();
+    if (intertwinedBlocks) {
+      this.fallingTetromino = currentShape;
+    }
     this.placeFallingTetromino();
   }
   rotateLeft() {
