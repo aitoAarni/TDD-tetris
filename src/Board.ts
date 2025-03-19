@@ -169,17 +169,16 @@ export class Board {
     if (!this.fallingTetromino?.rotatingShape) return false;
     let canMoveDownBool = true;
     const columnStart = this.tetrominoStartColumn;
-    const rowStart = this.fallingTetrominoRow - (this.fallingTetromino.size - 1);
     const CheckBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
-      if (this.height - 1 <= rowIndex + rowStart) {
+      if (this.height - 1 <= rowIndex + this.fallingTetrominoRow2) {
         canMoveDownBool = false;
       } else if (
         (this.fallingTetromino as TetrominoShape).size - 1 > rowIndex &&
         this.fallingTetromino?.rotatingShape.shape[rowIndex + 1][columnIndex] !== "."
       )
         return;
-      else if (this.board[rowStart + rowIndex + 1][columnStart + columnIndex] !== ".") {
+      else if (this.board[this.fallingTetrominoRow2 + rowIndex + 1][columnStart + columnIndex] !== ".") {
         canMoveDownBool = false;
       }
     };
