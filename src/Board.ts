@@ -141,11 +141,10 @@ export class Board {
     if (this.fallingTetromino === null) {
       return;
     }
-    const rowStart = this.fallingTetrominoRow + 1 - this.fallingTetromino.size;
     const columnStart = this.tetrominoStartColumn;
     const removeBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
-      this.board[rowStart + rowIndex][columnStart + columnIndex] = ".";
+      this.board[this.fallingTetrominoRow2 + rowIndex][columnStart + columnIndex] = ".";
     };
     this.iterateTetrominoShape(removeBlock);
   }
