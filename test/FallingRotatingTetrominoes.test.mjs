@@ -6,7 +6,7 @@ import { Tetromino } from "../src/Tetromino";
 describe("Falling and Rotating tetrominoes", () => {
   let board;
   beforeEach(() => {
-    board = new Board(10, 4);
+    board = new Board(10, 5);
   });
   test("Falling tetromino can be rotated right", () => {
     board.drop(Tetromino.T_SHAPE);
@@ -15,6 +15,7 @@ describe("Falling and Rotating tetrominoes", () => {
             ....T.....
             ....TT....
             ....T.....
+            ..........
             ..........`);
   });
   test("Falling tetromino can be rotated right", () => {
@@ -24,12 +25,23 @@ describe("Falling and Rotating tetrominoes", () => {
             ....T.....
             ...TT.....
             ....T.....
+            ..........
             ..........`);
   });
   describe("Cannot be rotated through other blocks", () => {
     test("Tetromino can't be rotated left through other blocks", () => {
-        board.drop(Tetromino.T_SHAPE)
-
-    })
-  })
+      board.drop(Tetromino.T_SHAPE);
+      board.moveLeft();
+      board.rotateLeft();
+      board.tick();
+      board.tick();
+      expect(board.toString()).to.equalShape(`
+            ..........
+            ..........
+            ...T......
+            ..TT......
+            ...T......
+            `);
+    });
+  });
 });
