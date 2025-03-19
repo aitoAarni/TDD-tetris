@@ -45,7 +45,6 @@ export class Board {
     if (!moveDown || !this.tetrominoFalling) {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow2 = 0;
-      this.fallingTetrominoRow = 0;
       return false;
     }
     this.moveDown();
