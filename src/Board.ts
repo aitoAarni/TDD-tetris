@@ -45,6 +45,7 @@ export class Board {
     const moveDown = this.canMoveDown();
     if (!moveDown || !this.tetrominoFalling) {
       this.tetrominoFalling = false;
+      this.fallingTetrominoRow2 = 0;
       this.fallingTetrominoRow = 0;
       return false;
     }
