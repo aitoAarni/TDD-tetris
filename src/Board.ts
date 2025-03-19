@@ -215,6 +215,12 @@ export class Board {
     this.placeFallingTetromino();
   }
   tetrominoIntertwinedWithBlock() {
-    
+    let intertwinedBlocks = false;
+    this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
+      if (block === ".") return;
+      if (this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex] !== ".") {
+        intertwinedBlocks = true;
+      }
+    });
   }
 }
