@@ -70,6 +70,7 @@ export class Board {
         }
       });
     });
+    const blockOnRight2 = this.touchingBlockOnRight()
     if (touchingRightBorder || blockOnRight) return;
     this.removeFallingTetromino();
     this.tetrominoStartColumn++;
