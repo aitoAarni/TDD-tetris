@@ -129,7 +129,6 @@ export class Board {
     const canMoveDown = this.canMoveDown();
     if (canMoveDown) {
       this.removeFallingTetromino();
-      this.fallingTetrominoRow++;
       this.fallingTetrominoRow2++;
       this.placeFallingTetromino();
     }
