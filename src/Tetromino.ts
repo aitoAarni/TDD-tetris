@@ -69,7 +69,13 @@ class O_shape {
 class T_shape2 {
     shape: string[][];
     size : number
-    static SHAPES = []
+    static SHAPES = [
+        [
+            ["."],["."],["."],["."],
+            ["T"],["T"],["T"],["."],
+            ["."],["T"],["."],["."],
+            ["."],["."],["."],["."]],
+    ]
     constructor() {
         this.shape = []
         this.size = 4
