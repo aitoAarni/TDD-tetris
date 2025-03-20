@@ -17,6 +17,7 @@ export class Board {
     this.fallingTetromino = null;
     this.tetrominoStartColumn = 0;
   }
+  
   setBoard(string: string) {
     this.tetrominoFalling = false;
     this.fallingTetromino = null;
@@ -32,6 +33,7 @@ export class Board {
     if (wrongSize) throw new Error("String doesn't match board dimensions");
     this.board = newBoard;
   }
+
   toString() {
     const boardRowsStrings = this.board.map((row: string[]) => {
       return row.join("");
