@@ -3,8 +3,11 @@ import { expect } from "chai";
 import { Board } from "../src/Board";
 
 describe("Board can be created from a string", () => {
+  let board;
+  beforeEach(() => {
+    board = new Board(6, 6);
+  });
   test("Created from a string", () => {
-    const board = new Board(6, 6);
     board.setBoard(
       `......
             ......
