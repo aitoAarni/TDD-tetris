@@ -37,6 +37,12 @@ class I_shape {
       }
 }
 
+class O_shape2 {
+    constructor(){
+        
+    }
+}
+
 class O_shape {
     rotatingShape: RotatingShape
     shape: string[][]
@@ -133,7 +139,7 @@ export class ANY_shape {
 export type TetrominoShape = I_shape | O_shape | T_shape
 
 export class Tetromino {
-    
+
   static T_SHAPE =  new T_shape(0)
 
   static I_SHAPE = new I_shape(RotatingShape.fromString(`.....
