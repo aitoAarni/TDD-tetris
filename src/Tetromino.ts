@@ -83,6 +83,11 @@ class T_shape2 {
         this.shape = T_shape2.SHAPES[this.shapeNumber]
         this.size = 4
     }
+    handleShapeNumber(number: number) {
+        if (number < 0) return 3
+        if (number > 3) return 0
+        return number
+    }
     rotateRight() {
         return new T_shape2(this.shapeNumber + 1)
     }
