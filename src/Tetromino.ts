@@ -38,6 +38,10 @@ class I_shape {
 }
 
 class O_shape2 {
+    shape: string[][]
+    static SHAPES = [
+        [[".", ".", ".", "."], [".", "O", "O", "."], [".", "O", "O", "."], [".", ".", ".", "."]]
+    ]
     constructor(){
         this.shape = []
     }
