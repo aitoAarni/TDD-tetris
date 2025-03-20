@@ -77,15 +77,17 @@ class T_shape2 {
         [[".", "T", ".", "."], [".", "T", "T", "."], [".", "T", ".", "."], [".", ".", ".", "."]],
     ]
     constructor(shapeNumber: number) {
-        this.shape = T_shape2.SHAPES[shapeNumber]
         this.shapeNumber = shapeNumber
+        if (shapeNumber < 0) this.shapeNumber = 3
+        if (shapeNumber > 3) this.shapeNumber = 0 
+        this.shape = T_shape2.SHAPES[this.shapeNumber]
         this.size = 4
     }
     rotateRight() {
         return new T_shape2(this.shapeNumber + 1)
     }
     rotateLeft() {
-        return new T_shape2(3)
+        return new T_shape2(this.shapeNumber - 1)
     }
     toString() {
         const shapeString = this.shape.map((row) => {
