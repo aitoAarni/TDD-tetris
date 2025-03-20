@@ -18,6 +18,8 @@ export class Board {
     this.tetrominoStartColumn = 0;
   }
   setBoard(string: string) {
+    this.tetrominoFalling = false
+    this.fallingTetromino = null
     this.board = string.split(/\s/g).filter(item => item.length>0).map(row => row.split(""));
   
   }
