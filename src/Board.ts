@@ -108,8 +108,7 @@ export class Board {
   touchingBlockOnLeft() {
     if (!this.fallingTetromino) return;
     let blockOnLeft = false;
-    this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number)=>{
-
+    this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
       if (columnIndex > 0 && this.fallingTetromino?.shape[rowIndex][columnIndex - 1] !== ".") return;
       if (
@@ -117,7 +116,7 @@ export class Board {
         this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex - 1] !== "."
       ) {
         blockOnLeft = true;
-        }
+      }
     });
     return blockOnLeft;
   }
