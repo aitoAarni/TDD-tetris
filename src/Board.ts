@@ -37,7 +37,7 @@ export class Board {
   }
 
   tick() {
-    if (!this.fallingTetromino?.rotatingShape) return;
+    if (!this.fallingTetromino) return;
 
     const moveDown = this.canMoveDown();
     if (!moveDown || !this.tetrominoFalling) {
@@ -159,7 +159,7 @@ export class Board {
   }
 
   canMoveDown() {
-    if (!this.fallingTetromino?.rotatingShape) return false;
+    if (!this.fallingTetromino) return false;
     let canMoveDownBool = true;
     const columnStart = this.tetrominoStartColumn;
     const CheckBlock = (block: string, rowIndex: number, columnIndex: number) => {
