@@ -80,7 +80,6 @@ class T_shape2 {
         this.size = 4
     }
     toString() {
-        console.log(this.shape)
         const shapeString = this.shape.map((row) => {
             return row.join("")
         }
