@@ -28,7 +28,6 @@ describe("Board can be created from a string", () => {
   });
   test("Falling tetromino get's removed if on board before creation", () => {
     board.drop(Tetromino.T_SHAPE2);
-    board.tick();
     board.setBoard(
       `......
               ......
@@ -37,7 +36,7 @@ describe("Board can be created from a string", () => {
               TTT...
               .T....`
     );
-    board.tick()
+    board.tick();
     expect(board.toString()).to.equalShape(`
                   ......
               ......
