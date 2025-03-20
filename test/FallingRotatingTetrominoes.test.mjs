@@ -69,29 +69,30 @@ describe("Falling and Rotating tetrominoes", () => {
     });
   });
   describe("Cannot be rotated through boarders", () => {
-    test.skip("Cannot be rotated left through border", () => {
-      board.drop(Tetromino.O_SHAPE);
-      board.moveLeft();
-      board.moveLeft();
-      board.tick();
-      board.tick();
-      board.tick();
-      board.tick();
-      board.drop(Tetromino.T_SHAPE);
+    test("Cannot be rotated left through border", () => {
+      board.setBoard(`
+        ..........
+        ..........
+        ..........
+        .......T..
+        .......T..
+        `);
+      board.drop(Tetromino.T_SHAPE2);
+      board.moveRight();
+      board.moveRight();
+      board.moveRight();
+      board.moveRight();
       board.rotateRight();
-      board.moveLeft();
-      board.moveLeft();
-      board.moveLeft();
-      board.moveLeft();
+      board.moveRight()
       board.tick();
       board.tick();
       board.rotateLeft();
       expect(board.toString()).to.equalShape(`
             ..........
             ..........
-            T.........
-             TTOO......
-             T.OO......`);
+            .........T
+             .......TTT
+             .......T.T`);
     });
     test.skip("Cannot be rotated right through border", () => {
       board.drop(Tetromino.T_SHAPE);
