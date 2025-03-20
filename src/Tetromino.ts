@@ -51,9 +51,14 @@ class O_shape {
         return new O_shape(new RotatingShape(this.rotatingShape.shape))
     }
 
-    toString(){
-        return this.rotatingShape.toString()
-    }
+    toString() {
+        const shapeString = this.shape.map((row) => {
+            return row.join("")
+        }
+      )
+        .join("\n") + "\n"
+        return shapeString;
+      }
 }
 
 class T_shape {
