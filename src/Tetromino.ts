@@ -66,7 +66,7 @@ class O_shape {
       }
 }
  
-class T_shape2 {
+class T_shape {
     shape: string[][];
     shapeNumber: number
     size : number
@@ -78,7 +78,7 @@ class T_shape2 {
     ]
     constructor(shapeNumber: number) {
         this.shapeNumber = this.handleShapeNumber(shapeNumber)
-        this.shape = T_shape2.SHAPES[this.shapeNumber]
+        this.shape = T_shape.SHAPES[this.shapeNumber]
         this.size = 4
     }
     handleShapeNumber(number: number) {
@@ -87,10 +87,10 @@ class T_shape2 {
         return number
     }
     rotateRight() {
-        return new T_shape2(this.shapeNumber + 1)
+        return new T_shape(this.shapeNumber + 1)
     }
     rotateLeft() {
-        return new T_shape2(this.shapeNumber - 1)
+        return new T_shape(this.shapeNumber - 1)
     }
     toString() {
         const shapeString = this.shape.map((row) => {
@@ -133,11 +133,11 @@ export class ANY_shape {
 export type TetrominoShape = I_shape | O_shape | T_shape
 
 export class Tetromino {
-  static T_SHAPE2 = new T_shape2(0)
+  static T_SHAPE2 = new T_shape(0)
 
 
 
-  static T_SHAPE =  new T_shape2(0)
+  static T_SHAPE =  new T_shape(0)
 
   static I_SHAPE = new I_shape(RotatingShape.fromString(`.....
                                             .....
