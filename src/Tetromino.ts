@@ -111,10 +111,15 @@ export class ANY_shape {
     rotateLeft() {
         return new T_shape(this.rotatingShape.rotateLeft())
     }
-
+    
     toString() {
-        return this.rotatingShape.toString()
-    }
+        const shapeString = this.shape.map((row) => {
+            return row.join("")
+        }
+      )
+        .join("\n") + "\n"
+        return shapeString;
+      }
 }
 
 export type TetrominoShape = I_shape | O_shape | T_shape
