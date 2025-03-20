@@ -74,7 +74,7 @@ export class Board {
       if (block === ".") return;
       if (
         columnIndex < (this.fallingTetromino as TetrominoShape).size - 1 &&
-        this.fallingTetromino?.rotatingShape.shape[rowIndex][columnIndex + 1] !== "."
+        this.fallingTetromino?.shape[rowIndex][columnIndex + 1] !== "."
       )
         return;
       if (
