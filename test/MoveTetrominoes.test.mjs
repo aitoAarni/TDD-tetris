@@ -58,14 +58,14 @@ describe("Move tetromino", () => {
       ..........`
       );
     });
-    test.skip("It cannot be moved right beyond the board", () => {
+    test("It cannot be moved right beyond the board", () => {
       for (let i = 0; i < 10; i++) {
         board.moveRight();
       }
       expect(board.toString()).to.equalShape(
-        `........T.
+        `..........
         .......TTT
-        ..........
+        ........T.
         ..........
         ..........
         ..........`
