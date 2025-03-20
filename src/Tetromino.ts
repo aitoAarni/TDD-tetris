@@ -70,16 +70,22 @@ class T_shape2 {
     shape: string[][];
     size : number
     static SHAPES = [
-        [["."], ["."], ["."], ["."], ["T"], ["T"], ["T"], ["."], ["."], ["T"], ["."], ["."], ["."], ["."], ["."], ["."]],
+        [[".", ".", ".", "."],["T", "T", "T", "."], [".", "T", ".", "."], [".", ".", ".", "."]],
         [["."], ["T"], ["."], ["."], ["T"], ["T"], ["."], ["."], ["."], ["T"], ["."], ["."], ["."], ["."], ["."], ["."]],
         [["."], ["."], ["."], ["."], ["."], ["T"], ["."], ["."], ["T"], ["T"], ["T"], ["."], ["."], ["."], ["."], ["."]],
         [["."], ["T"], ["."], ["."], ["."], ["T"], ["T"], ["."], ["."], ["T"], ["."], ["."], ["."], ["."], ["."], ["."]],
     ]
     constructor(shapeNumber: number) {
-        this.shape = []
+        this.shape = T_shape2.SHAPES[shapeNumber]
         this.size = 4
     }
-  }
+    toString() {
+        console.log(this.shape)
+        const shapeString = this.shape.map((row) => {
+            return row.join("")
+        })
+        .join("\n") + "\n"
+        return shapeString;}}
 
 class T_shape {
     rotatingShape: RotatingShape
@@ -164,6 +170,7 @@ export class ANY_shape {
 export type TetrominoShape = I_shape | O_shape | T_shape
 
 export class Tetromino {
+  static T_SHAPE2 = new T_shape2(0)
   static T_SHAPE = new T_shape(RotatingShape.fromString(`.T.
                                         TTT
                                         ...`))

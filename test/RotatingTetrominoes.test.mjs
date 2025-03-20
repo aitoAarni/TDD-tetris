@@ -16,11 +16,11 @@ function distinctOrientations(shape) {
 }
 
 describe("The T shape", () => {
-  const shape = Tetromino.T_SHAPE;
+  const shape = Tetromino.T_SHAPE2;
 
-  test.skip("initial orientation", () => {
+  test.only("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
-      `...
+      `....
        TTT.
        .T..
        ....`
