@@ -113,11 +113,11 @@ export class ANY_shape {
     }
 
     rotateRight() {
-        return new T_shape(this.rotatingShape.rotateRight())
+        return new T_shape(0)
     }
 
     rotateLeft() {
-        return new T_shape(this.rotatingShape.rotateLeft())
+        return new T_shape(0)
     }
 
     toString() {
