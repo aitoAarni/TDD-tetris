@@ -75,8 +75,13 @@ class T_shape {
     }
 
     toString() {
-        return this.rotatingShape.toString()
-    }
+        const shapeString = this.shape.map((row) => {
+            return row.join("")
+        }
+      )
+        .join("\n") + "\n"
+        return shapeString;
+      }
 }
 
 export class ANY_shape {

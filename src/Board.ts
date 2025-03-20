@@ -151,7 +151,7 @@ export class Board {
   }
 
   iterateTetrominoShape(callback: (block: string, rowIndex: number, columnIndex: number) => void) {
-    if (!this.fallingTetromino?.rotatingShape) return;
+    if (!this.fallingTetromino) return;
     this.fallingTetromino as TetrominoShape;
     this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
