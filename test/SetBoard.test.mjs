@@ -27,7 +27,7 @@ describe("Board can be created from a string", () => {
                 `);
   });
   test("Falling tetromino get's removed if on board before creation", () => {
-    board.drop(Tetromino.T_SHAPE2);
+    board.drop(Tetromino.T_SHAPE);
     board.setBoard(
       `......
               ......
