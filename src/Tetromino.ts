@@ -75,7 +75,10 @@ class T_shape {
         this.rotatingShape = rotatingShape
         this.shape = rotatingShape.shape
         this.shapes = [
-            
+            [["."],["."],["."],["."],
+            ["T"],["T"],["T"],["."],
+            ["."],["T"],["."],["."],
+            ["."],["."],["."],["."]],
         ]
         this.size = rotatingShape.size
     }
