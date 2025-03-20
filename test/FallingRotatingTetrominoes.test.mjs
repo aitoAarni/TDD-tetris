@@ -36,7 +36,7 @@ describe("Falling and Rotating tetrominoes", () => {
         ..........
         ..........
         ..........
-        `)
+        `);
 
       board.drop(Tetromino.T_SHAPE2);
       board.rotateLeft();
@@ -48,21 +48,23 @@ describe("Falling and Rotating tetrominoes", () => {
             ..........
             `);
     });
-    test.skip("Tetromino can't be rotated right through other blocks", () => {
-      board.drop(Tetromino.T_SHAPE);
-      board.rotateLeft();
-      board.tick();
-      board.tick();
-      board.tick();
-      board.tick();
-      board.drop(Tetromino.T_SHAPE);
+    test("Tetromino can't be rotated right through other blocks", () => {
+      board.setBoard(`
+        TTTTTTTTTT
+        ..........
+        ..........
+        ..........
+        ..........
+        `);
+      board.drop(Tetromino.T_SHAPE2);
       board.rotateRight();
       expect(board.toString()).to.equalShape(`
-              ....T.....
-              ...TTT....
-              ....T.....
-              ...TT.....
-              ....T.....
+        TTTTTTTTTT
+        ...TTT....
+        ....T.....
+        ..........
+        ..........
+        
               `);
     });
   });
@@ -147,20 +149,20 @@ describe("Falling and Rotating tetrominoes", () => {
         `);
     });
     test.skip("Can wallkick from right rotation", () => {
-        board.drop(Tetromino.T_SHAPE);
-        board.rotateLeft();
-        board.moveRight();
-        board.moveRight();
-        board.moveRight();
-        board.moveRight();
-        board.rotateRight();
-        expect(board.toString()).to.equalShape(`
+      board.drop(Tetromino.T_SHAPE);
+      board.rotateLeft();
+      board.moveRight();
+      board.moveRight();
+      board.moveRight();
+      board.moveRight();
+      board.rotateRight();
+      expect(board.toString()).to.equalShape(`
           ........T.
           .......TTT
           ..........
           ..........
           ..........
           `);
-      })
+    });
   });
 });
