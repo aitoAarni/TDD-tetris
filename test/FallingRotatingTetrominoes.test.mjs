@@ -153,5 +153,21 @@ describe("Falling and Rotating tetrominoes", () => {
         ..........
         `);
     });
+    test("Can wallkick from right rotation", () => {
+        board.drop(Tetromino.T_SHAPE);
+        board.rotateLeft();
+        board.moveRight();
+        board.moveRight();
+        board.moveRight();
+        board.moveRight();
+        board.rotateRight();
+        expect(board.toString()).to.equalShape(`
+          ........T.
+          .......TTT
+          ..........
+          ..........
+          ..........
+          `);
+      })
   });
 });
