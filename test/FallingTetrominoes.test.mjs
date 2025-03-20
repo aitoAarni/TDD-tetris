@@ -13,7 +13,7 @@ describe("Falling tetrominoes", () => {
   let board;
   beforeEach(() => {
     board = new Board(10, 6);
-    board.drop(Tetromino.T_SHAPE2)
+    board.drop(Tetromino.T_SHAPE)
   });
 
   test("start from the top middle", () => {
@@ -43,7 +43,7 @@ describe("Falling tetrominoes", () => {
 
   test("stop when they land on another block", () => {
     fallToBottom(board);
-    board.drop(Tetromino.T_SHAPE2);
+    board.drop(Tetromino.T_SHAPE);
     fallToBottom(board);
 
     expect(board.toString()).to.equalShape(
