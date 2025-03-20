@@ -108,7 +108,7 @@ export class Board {
   touchingBlockOnLeft() {
     if (!this.fallingTetromino) return;
     let blockOnLeft = false;
-    this.fallingTetromino.rotatingShape.shape.forEach((row, rowIndex) => {
+    this.fallingTetromino.shape.forEach((row, rowIndex) => {
       row.forEach((block, columnIndex) => {
         if (block === ".") return;
         if (columnIndex > 0 && this.fallingTetromino?.rotatingShape.shape[rowIndex][columnIndex - 1] !== ".") return;
