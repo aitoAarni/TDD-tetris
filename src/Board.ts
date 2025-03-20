@@ -17,7 +17,10 @@ export class Board {
     this.fallingTetromino = null;
     this.tetrominoStartColumn = 0;
   }
-
+  setBoard(string: string) {
+    this.board = string.split(/\s/g).filter(item => item.length>0).map(row => row.split(""));
+  
+  }
   toString() {
     const boardRowsStrings = this.board.map((row: string[]) => {
       return row.join("");
