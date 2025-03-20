@@ -115,14 +115,7 @@ class T_shape {
         this.size = rotatingShape.size
     }
 
-    rotateRight() {
-        return new T_shape(this.rotatingShape.rotateRight())
-    }
-
-    rotateLeft() {
-        return new T_shape(this.rotatingShape.rotateLeft())
-    }
-
+  
 
 }
 
