@@ -123,14 +123,7 @@ class T_shape {
         return new T_shape(this.rotatingShape.rotateLeft())
     }
 
-    toString() {
-        const shapeString = this.shape.map((row) => {
-            return row.join("")
-        }
-      )
-        .join("\n") + "\n"
-        return shapeString;
-      }
+
 }
 
 export class ANY_shape {
