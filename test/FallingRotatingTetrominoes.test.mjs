@@ -9,7 +9,7 @@ describe("Falling and Rotating tetrominoes", () => {
     board = new Board(10, 5);
   });
   test("Falling tetromino can be rotated right", () => {
-    board.drop(Tetromino.T_SHAPE2);
+    board.drop(Tetromino.T_SHAPE);
     board.rotateRight();
     expect(board.toString()).to.equalShape(`
             ....T.....
@@ -19,7 +19,7 @@ describe("Falling and Rotating tetrominoes", () => {
             ..........`);
   });
   test("Falling tetromino can be rotated left", () => {
-    board.drop(Tetromino.T_SHAPE2);
+    board.drop(Tetromino.T_SHAPE);
     board.rotateLeft();
     expect(board.toString()).to.equalShape(`
             ....T.....
@@ -38,7 +38,7 @@ describe("Falling and Rotating tetrominoes", () => {
         ..........
         `);
 
-      board.drop(Tetromino.T_SHAPE2);
+      board.drop(Tetromino.T_SHAPE);
       board.rotateLeft();
       expect(board.toString()).to.equalShape(`
             TTTTTTTTTT
@@ -56,7 +56,7 @@ describe("Falling and Rotating tetrominoes", () => {
         ..........
         ..........
         `);
-      board.drop(Tetromino.T_SHAPE2);
+      board.drop(Tetromino.T_SHAPE);
       board.rotateRight();
       expect(board.toString()).to.equalShape(`
         TTTTTTTTTT
@@ -77,7 +77,7 @@ describe("Falling and Rotating tetrominoes", () => {
         .......T..
         .......T..
         `);
-      board.drop(Tetromino.T_SHAPE2);
+      board.drop(Tetromino.T_SHAPE);
       board.moveRight();
       board.moveRight();
       board.moveRight();
@@ -102,7 +102,7 @@ describe("Falling and Rotating tetrominoes", () => {
         ..T.......
         ..T.......
         `);
-      board.drop(Tetromino.T_SHAPE2);
+      board.drop(Tetromino.T_SHAPE);
       board.moveLeft();
       board.moveLeft();
       board.moveLeft();
@@ -123,7 +123,7 @@ describe("Falling and Rotating tetrominoes", () => {
   });
   describe("Wallkicks", () => {
     test("Can wallkick from right rotation", () => {
-      board.drop(Tetromino.T_SHAPE2);
+      board.drop(Tetromino.T_SHAPE);
       board.rotateLeft();
       board.moveLeft();
       board.moveLeft();
@@ -139,7 +139,7 @@ describe("Falling and Rotating tetrominoes", () => {
         `);
     });
     test("Can wallkick from left rotation", () => {
-      board.drop(Tetromino.T_SHAPE2);
+      board.drop(Tetromino.T_SHAPE);
       board.rotateRight();
       board.moveRight();
       board.moveRight();
