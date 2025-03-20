@@ -77,9 +77,7 @@ class T_shape2 {
         [[".", "T", ".", "."], [".", "T", "T", "."], [".", "T", ".", "."], [".", ".", ".", "."]],
     ]
     constructor(shapeNumber: number) {
-        this.shapeNumber = shapeNumber
-        if (shapeNumber < 0) this.shapeNumber = 3
-        if (shapeNumber > 3) this.shapeNumber = 0 
+        this.shapeNumber = this.handleShapeNumber(shapeNumber)
         this.shape = T_shape2.SHAPES[this.shapeNumber]
         this.size = 4
     }
