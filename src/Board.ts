@@ -170,7 +170,7 @@ export class Board {
         canMoveDownBool = false;
       } else if (
         (this.fallingTetromino as TetrominoShape).size - 1 > rowIndex &&
-        this.fallingTetromino?.rotatingShape.shape[rowIndex + 1][columnIndex] !== "."
+        this.fallingTetromino?.shape[rowIndex + 1][columnIndex] !== "."
       )
         return;
       else if (this.board[this.fallingTetrominoRow + rowIndex + 1][columnStart + columnIndex] !== ".") {
