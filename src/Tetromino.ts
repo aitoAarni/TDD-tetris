@@ -39,11 +39,13 @@ class I_shape {
 
 class O_shape2 {
     shape: string[][]
+    shapeNumber: number
     static SHAPES = [
         [[".", ".", ".", "."], [".", "O", "O", "."], [".", "O", "O", "."], [".", ".", ".", "."]]
     ]
-    constructor(){
-        this.shape = []
+    constructor(shapeNumber: number){
+        this.shapeNumber = shapeNumber
+        this.shape = O_shape2.SHAPES[this.shapeNumber]
     }
 }
 
