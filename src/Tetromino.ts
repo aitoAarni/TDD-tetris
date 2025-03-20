@@ -65,10 +65,13 @@ class O_shape {
         return shapeString;
       }
 }
-
+ 
 class T_shape2 {
-    
-}
+    shape: string[][];
+    constructor() {
+        this.shape = []
+    }
+  }
 
 class T_shape {
     rotatingShape: RotatingShape
