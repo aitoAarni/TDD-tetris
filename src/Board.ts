@@ -209,8 +209,8 @@ export class Board {
     this.fallingTetromino = this.fallingTetromino.rotateLeft();
     const intertwinedBlocks = this.intertwinedBlocks();
     if (intertwinedBlocks) {
-      this.fallingTetromino = currentShape;
-    }
+      const succesffullWallKick = this.wallKick();
+      if (!succesffullWallKick) {this.fallingTetromino = currentShape;}}
     this.placeFallingTetromino();
   }
   intertwinedBlocks() {
@@ -221,11 +221,17 @@ export class Board {
       const boardColumnIndex = this.tetrominoStartColumn + columnIndex;
       if (0 > boardRowIndex || this.height <= boardRowIndex || 0 > boardColumnIndex || this.width <= boardColumnIndex) {
         intertwinedBlocks = true;
-      }
-      else if (this.board[boardRowIndex][boardColumnIndex] !== ".") {
+      } else if (this.board[boardRowIndex][boardColumnIndex] !== ".") {
         intertwinedBlocks = true;
       }
     });
     return intertwinedBlocks;
   }
+  wallKick() {   if (!this.fallingTetromino) return;
+    const origianlColumn = this.tetrominoStartColumn;
+    this.tetrominoStartColumn = origianlColumn + 1;
+    if (!this.intertwinedBlocks()) return true;
+    this.tetrominoStartColumn = origianlColumn - 1;
+    if (!this.intertwinedBlocks()) return true;
+    this.tetrominoStartColumn = origianlColumn;}
 }
