@@ -69,10 +69,14 @@ class O_shape {
 class T_shape {
     rotatingShape: RotatingShape
     shape: string[][]
+    shapes: string[][][]
     size: number
     constructor(rotatingShape: RotatingShape){
         this.rotatingShape = rotatingShape
         this.shape = rotatingShape.shape
+        this.shapes = [
+            
+        ]
         this.size = rotatingShape.size
     }
 
@@ -111,7 +115,7 @@ export class ANY_shape {
     rotateLeft() {
         return new T_shape(this.rotatingShape.rotateLeft())
     }
-    
+
     toString() {
         const shapeString = this.shape.map((row) => {
             return row.join("")
