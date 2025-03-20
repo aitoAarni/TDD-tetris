@@ -66,6 +66,10 @@ class O_shape {
       }
 }
 
+class T_shape2 {
+    
+}
+
 class T_shape {
     rotatingShape: RotatingShape
     shape: string[][]
