@@ -70,8 +70,9 @@ class T_shape {
     rotatingShape: RotatingShape
     shape: string[][]
     shapes: string[][][]
+    shapeNumber: number
     size: number
-    constructor(rotatingShape: RotatingShape){
+    constructor(rotatingShape: RotatingShape, shapeNumber: number=0){
         this.rotatingShape = rotatingShape
         this.shape = rotatingShape.shape
         this.shapes = [
@@ -95,6 +96,7 @@ class T_shape {
             ["."],["T"],["."],["."],
             ["."],["."],["."],["."]]
         ]
+        this.shapeNumber = shapeNumber
         this.size = rotatingShape.size
     }
 
