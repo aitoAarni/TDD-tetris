@@ -83,9 +83,12 @@ class T_shape2 {
         console.log(this.shape)
         const shapeString = this.shape.map((row) => {
             return row.join("")
-        })
+        }
+    )
         .join("\n") + "\n"
-        return shapeString;}}
+        return shapeString;
+    }
+}
 
 class T_shape {
     rotatingShape: RotatingShape
