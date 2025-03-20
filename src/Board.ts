@@ -17,7 +17,7 @@ export class Board {
     this.fallingTetromino = null;
     this.tetrominoStartColumn = 0;
   }
-  
+
   setBoard(string: string) {
     this.tetrominoFalling = false;
     this.fallingTetromino = null;
@@ -212,7 +212,10 @@ export class Board {
     this.fallingTetromino = this.fallingTetromino.rotateRight();
     const intertwinedBlocks = this.intertwinedBlocks();
     if (intertwinedBlocks) {
-      this.fallingTetromino = currentShape;
+      const successfulWallkick = this.wallKick();
+      if (!successfulWallkick) {
+        this.fallingTetromino = currentShape;
+      }
     }
     this.placeFallingTetromino();
   }
@@ -223,8 +226,8 @@ export class Board {
     this.fallingTetromino = this.fallingTetromino.rotateLeft();
     const intertwinedBlocks = this.intertwinedBlocks();
     if (intertwinedBlocks) {
-      const succesffullWallKick = this.wallKick();
-      if (!succesffullWallKick) {
+      const successfulWallkick = this.wallKick();
+      if (!successfulWallkick) {
         this.fallingTetromino = currentShape;
       }
     }
