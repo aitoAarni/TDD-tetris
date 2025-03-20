@@ -80,5 +80,21 @@ describe("Falling and Rotating tetrominoes", () => {
              ..........
              ..........`);
     });
+    test("Cannot be rotated right through border", () => {
+      board.drop(Tetromino.T_SHAPE);
+      board.rotateLeft();
+      board.moveRight();
+      board.moveRight();
+      board.moveRight();
+      board.moveRight();
+      board.moveRight();
+      board.rotateRight();
+      expect(board.toString()).to.equalShape(`
+               .........T
+               ........TT
+               .........T
+               ..........
+               ..........`);
+    });
   });
 });
