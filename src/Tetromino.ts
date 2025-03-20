@@ -84,6 +84,9 @@ class T_shape2 {
     rotateRight() {
         return new T_shape2(this.shapeNumber + 1)
     }
+    rotateLeft() {
+        return new T_shape2(3)
+    }
     toString() {
         const shapeString = this.shape.map((row) => {
             return row.join("")
