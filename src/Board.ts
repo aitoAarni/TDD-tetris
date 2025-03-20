@@ -180,7 +180,7 @@ export class Board {
   }
 
   placeFallingTetromino() {
-    if (!this.fallingTetromino?.rotatingShape) return;
+    if (!this.fallingTetromino) return;
     const columnStart = this.tetrominoStartColumn;
     const drawBlock = (block: string, rowIndex: number, columnIndex: number) => {
       if (block !== ".") {
