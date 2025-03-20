@@ -19,16 +19,18 @@ export class Board {
   }
   setBoard(string: string) {
     this.tetrominoFalling = false;
-    this.fallingTetromino = null
-    const newBoard = string.split(/\s/g).filter(item => item.length>0).map(row => row.split(""));
-    let wrongSize = false
-    if (newBoard.length !== this.height) wrongSize = true
+    this.fallingTetromino = null;
+    const newBoard = string
+      .split(/\s/g)
+      .filter((item) => item.length > 0)
+      .map((row) => row.split(""));
+    let wrongSize = false;
+    if (newBoard.length !== this.height) wrongSize = true;
     newBoard.forEach((row) => {
-      if (row.length !== this.width) wrongSize = true
+      if (row.length !== this.width) wrongSize = true;
     });
-    if (wrongSize) throw new Error("String doesn't match board dimensions")
-    this.board = newBoard
-  
+    if (wrongSize) throw new Error("String doesn't match board dimensions");
+    this.board = newBoard;
   }
   toString() {
     const boardRowsStrings = this.board.map((row: string[]) => {
