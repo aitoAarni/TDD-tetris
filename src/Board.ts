@@ -217,6 +217,8 @@ export class Board {
     let intertwinedBlocks = false;
     this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number) => {
       if (block === ".") return;
+      const boardRowIndex = this.fallingTetrominoRow + rowIndex;
+      const boardColumnIndex = this.tetrominoStartColumn + columnIndex;
       if (this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex] !== ".") {
         intertwinedBlocks = true;
       }
