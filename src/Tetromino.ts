@@ -104,15 +104,8 @@ class T_shape2 {
 
 class T_shape {
     rotatingShape: RotatingShape
-    shape: string[][]
-    shapeNumber: number
-    size: number
     constructor(rotatingShape: RotatingShape, shapeNumber: number=0){
         this.rotatingShape = rotatingShape
-        this.shape = rotatingShape.shape
-  
-        this.shapeNumber = shapeNumber
-        this.size = rotatingShape.size
     }
 
   
