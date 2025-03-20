@@ -39,7 +39,7 @@ class I_shape {
 
 class O_shape2 {
     constructor(){
-        
+        this.shape = []
     }
 }
 
