@@ -108,17 +108,16 @@ export class Board {
   touchingBlockOnLeft() {
     if (!this.fallingTetromino) return;
     let blockOnLeft = false;
-    this.fallingTetromino.shape.forEach((row, rowIndex) => {
-      row.forEach((block, columnIndex) => {
-        if (block === ".") return;
-        if (columnIndex > 0 && this.fallingTetromino?.shape[rowIndex][columnIndex - 1] !== ".") return;
-        if (
-          this.tetrominoStartColumn + columnIndex > 0 &&
-          this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex - 1] !== "."
-        ) {
-          blockOnLeft = true;
+    this.iterateTetrominoShape((block: string, rowIndex: number, columnIndex: number)=>{
+
+      if (block === ".") return;
+      if (columnIndex > 0 && this.fallingTetromino?.shape[rowIndex][columnIndex - 1] !== ".") return;
+      if (
+        this.tetrominoStartColumn + columnIndex > 0 &&
+        this.board[this.fallingTetrominoRow + rowIndex][this.tetrominoStartColumn + columnIndex - 1] !== "."
+      ) {
+        blockOnLeft = true;
         }
-      });
     });
     return blockOnLeft;
   }
