@@ -29,30 +29,23 @@ describe("Falling and Rotating tetrominoes", () => {
             ..........`);
   });
   describe("Cannot be rotated through other blocks", () => {
-    test.skip("Tetromino can't be rotated left through other blocks", () => {
-      board.drop(Tetromino.O_SHAPE);
-      board.tick();
-      board.tick();
-      board.tick();
-      board.tick();
-      board.drop(Tetromino.O_SHAPE);
-      board.moveLeft();
-      board.moveLeft();
-      board.tick();
-      board.tick();
-      board.tick();
-      board.tick();
+    test("Tetromino can't be rotated left through other blocks", () => {
+      board.setBoard(`
+        TTTTTTTTTT
+        ..........
+        ..........
+        ..........
+        ..........
+        `)
 
-      board.drop(Tetromino.T_SHAPE);
-      board.moveLeft();
-      board.tick();
+      board.drop(Tetromino.T_SHAPE2);
       board.rotateLeft();
       expect(board.toString()).to.equalShape(`
+            TTTTTTTTTT
+            ...TTT....
+            ....T.....
             ..........
-            ...T......
-            ..TTT.....
-            ..OOOO....
-            ..OOOO....
+            ..........
             `);
     });
     test.skip("Tetromino can't be rotated right through other blocks", () => {
