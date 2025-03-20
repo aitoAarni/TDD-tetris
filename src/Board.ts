@@ -219,7 +219,10 @@ export class Board {
       if (block === ".") return;
       const boardRowIndex = this.fallingTetrominoRow + rowIndex;
       const boardColumnIndex = this.tetrominoStartColumn + columnIndex;
-      if (this.board[boardRowIndex][boardColumnIndex] !== ".") {
+      if (0 > boardRowIndex || this.height <= boardRowIndex || 0 > boardColumnIndex || this.width <= boardColumnIndex) {
+        intertwinedBlocks = true;
+      }
+      else if (this.board[boardRowIndex][boardColumnIndex] !== ".") {
         intertwinedBlocks = true;
       }
     });

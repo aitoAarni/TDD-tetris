@@ -80,7 +80,7 @@ describe("Falling and Rotating tetrominoes", () => {
              ..........
              ..........`);
     });
-    test.only("Cannot be rotated right through border", () => {
+    test("Cannot be rotated right through border", () => {
       board.drop(Tetromino.T_SHAPE);
       board.rotateLeft();
       board.moveRight();
@@ -96,7 +96,7 @@ describe("Falling and Rotating tetrominoes", () => {
                ..........
                ..........`);
     });
-    test.skip("Cannot be rotated right through bottom border", () => {
+    test("Cannot be rotated right through bottom border", () => {
       board.drop(Tetromino.T_SHAPE);
       board.moveDown();
       board.moveDown();
