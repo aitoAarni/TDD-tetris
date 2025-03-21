@@ -37,7 +37,7 @@ class I_shape {
       }
 }
 
-class O_shape2 {
+class O_shape {
     shape: string[][]
     shapeNumber: number
     static SHAPES = [
@@ -45,7 +45,7 @@ class O_shape2 {
     ]
     constructor(shapeNumber: number){
         this.shapeNumber = shapeNumber
-        this.shape = O_shape2.SHAPES[this.shapeNumber]
+        this.shape = O_shape.SHAPES[this.shapeNumber]
     }
     toString(){
         const shapeString = this.shape.map((row) => {
@@ -57,11 +57,11 @@ class O_shape2 {
     }
     
     rotateRight() {
-        return new O_shape2(0)
+        return new O_shape(0)
     }
     
     rotateLeft() {
-        return new O_shape2(0)
+        return new O_shape(0)
     }
 }
 
@@ -142,6 +142,6 @@ export class Tetromino {
                                             .....
                                             .....`))
 
-    static O_SHAPE = new O_shape2(0)
-    static O_SHAPE2 = new O_shape2(0)
+    static O_SHAPE = new O_shape(0)
+    static O_SHAPE2 = new O_shape(0)
 }
