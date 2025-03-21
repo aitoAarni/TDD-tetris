@@ -76,13 +76,6 @@ class O_shape {
         this.size = rotatingShape.size
 
     }
-    rotateRight() {
-        return new O_shape(new RotatingShape(this.rotatingShape.shape))
-    }
-
-    rotateLeft() {
-        return new O_shape(new RotatingShape(this.rotatingShape.shape))
-    }
 
 }
  
