@@ -2,8 +2,14 @@ import { RotatingShape } from "./RotatingShape";
 
 
 class I_shape2 {
-    
-}
+    toString() {
+      const shape = [[".", ".", ".", "."],["I", "I", "I", "I"],[".", ".", ".", "."],[".", ".", ".", "."]];
+      const shapeString = shape.map((row) => {
+        return row.join("")})
+    .join("\n") + "\n"
+    return shapeString;
+    }
+  }
 
 class I_shape {
     rotatingShape: RotatingShape
@@ -149,4 +155,6 @@ export class Tetromino {
                                             .....`))
 
     static O_SHAPE = new O_shape(0)
+
+    static I_SHAPE2 = new I_shape2()
 }
