@@ -42,6 +42,11 @@ export class Board {
     return boardString;
   }
 
+  clearLine(index: number) {
+    this.board.splice(index, 1)
+    const arr = Array(this.width).fill(null).map(() => ".")
+    this.board.splice(0, 0, arr)
+  }
   drop(tetromino: TetrominoShape) {
     if (this.tetrominoFalling) {
       throw new Error("already falling");
