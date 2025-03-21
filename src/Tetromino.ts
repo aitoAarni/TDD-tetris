@@ -1,5 +1,6 @@
 import { RotatingShape } from "./RotatingShape";
 
+const alternate = [1, 0]
 
 class I_shape2 {
     shapeNumber: number
@@ -26,10 +27,10 @@ class I_shape2 {
     return shapeString;
     }
     rotateRight() {
-        return new I_shape2(1)
+        return new I_shape2(alternate[this.shapeNumber])
     }
     rotateLeft() {
-        return new I_shape2(1)
+        return new I_shape2(alternate[this.shapeNumber])
     }
   }
 
