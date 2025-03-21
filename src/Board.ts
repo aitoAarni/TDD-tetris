@@ -57,6 +57,7 @@ export class Board {
     });
     clearLines.forEach((index) => this.clearLine(index));
   }
+  
   drop(tetromino: TetrominoShape) {
     if (this.tetrominoFalling) {
       throw new Error("already falling");
