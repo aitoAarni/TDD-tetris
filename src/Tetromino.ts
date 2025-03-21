@@ -5,6 +5,7 @@ const alternate = [1, 0]
 class I_shape {
     shapeNumber: number
     shape: string[][]
+    size: number
     static shapes = [
         [[".", ".", ".", "."],["I", "I", "I", "I"],[".", ".", ".", "."],[".", ".", ".", "."]],
         [
@@ -17,6 +18,7 @@ class I_shape {
     constructor(shapeNumber: number){
         this.shapeNumber = shapeNumber
         this.shape = I_shape.shapes[this.shapeNumber]
+        this.size = 4
     }
     toString() {
       const shapeString = this.shape.map((row) => {
