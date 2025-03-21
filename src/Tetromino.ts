@@ -35,14 +35,6 @@ class I_shape2 {
   }
 
 class I_shape {
-    rotatingShape: RotatingShape
-    shape: string[][]
-    size: number
-    constructor(rotatingShape:  RotatingShape) {
-        this.rotatingShape = rotatingShape
-        this.shape = rotatingShape.shape
-        this.size = rotatingShape.size
-    }
 
 }
 
