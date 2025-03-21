@@ -44,15 +44,6 @@ class I_shape {
         this.size = rotatingShape.size
     }
 
-    rotateRight() {
-        const newShape = this.rotatingShape.rotateRight()
-        const lastIndex = newShape.shape.length-1
-        const temp = newShape.shape[Math.floor(lastIndex/2)][lastIndex]
-        newShape.shape[Math.floor(lastIndex/2)][lastIndex] = newShape.shape[Math.floor(lastIndex/2)][0]
-        newShape.shape[Math.floor(lastIndex/2)][0] = temp
-        return new I_shape(new RotatingShape(newShape.shape))
-    }
-
 }
 
 class O_shape {
