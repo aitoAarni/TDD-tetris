@@ -28,12 +28,5 @@ export class RotatingShape {
     return new RotatingShape(rotatedShape)
 }
 
-toString() {
-    const shapeString = this.shape.map((row) => {
-        return row.join("")
-    }
-  )
-    .join("\n") + "\n"
-    return shapeString;
-  }
+
 }
