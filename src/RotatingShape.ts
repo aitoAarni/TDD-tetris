@@ -19,14 +19,5 @@ export class RotatingShape {
     return new RotatingShape(rotatedShape)
   }
 
-  rotateLeft(){
-    const rotatedShape = new Array(this.shape.length).fill(null).map(() => new Array(this.shape.length).fill(""))
-    for (let i = 0; i<this.shape.length; i++) {
-      
-      this.shape[i].forEach((item, index) => rotatedShape[this.shape.length-1 - index][i] = item);
-    }
-    return new RotatingShape(rotatedShape)
-}
-
 
 }
