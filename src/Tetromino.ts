@@ -47,6 +47,14 @@ class O_shape2 {
         this.shapeNumber = shapeNumber
         this.shape = O_shape2.SHAPES[this.shapeNumber]
     }
+    toString(){
+        const shapeString = this.shape.map((row) => {
+            return row.join("")
+        }
+      )
+        .join("\n") + "\n"
+        return shapeString;
+    }
 }
 
 class O_shape {
@@ -158,4 +166,5 @@ export class Tetromino {
         .OO
         ...`)
     )
+    static O_SHAPE2 = new O_shape2(0)
 }
