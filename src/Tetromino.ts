@@ -55,6 +55,11 @@ class O_shape2 {
         .join("\n") + "\n"
         return shapeString;
     }
+    
+    rotateRight() {
+        return new O_shape2(0)
+    }
+    
 }
 
 class O_shape {
