@@ -2,7 +2,7 @@ import { RotatingShape } from "./RotatingShape";
 
 const alternate = [1, 0]
 
-class I_shape2 {
+class I_shape {
     shapeNumber: number
     shape: string[][]
     static shapes = [
@@ -16,7 +16,7 @@ class I_shape2 {
     ];
     constructor(shapeNumber: number){
         this.shapeNumber = shapeNumber
-        this.shape = I_shape2.shapes[this.shapeNumber]
+        this.shape = I_shape.shapes[this.shapeNumber]
     }
     toString() {
       const shapeString = this.shape.map((row) => {
@@ -27,10 +27,10 @@ class I_shape2 {
     return shapeString;
     }
     rotateRight() {
-        return new I_shape2(alternate[this.shapeNumber])
+        return new I_shape(alternate[this.shapeNumber])
     }
     rotateLeft() {
-        return new I_shape2(alternate[this.shapeNumber])
+        return new I_shape(alternate[this.shapeNumber])
     }
   }
 
@@ -135,7 +135,7 @@ export class Tetromino {
 
   static T_SHAPE =  new T_shape(0)
 
-  static I_SHAPE = new I_shape2(0)
+  static I_SHAPE = new I_shape(0)
                                  
     static O_SHAPE = new O_shape(0)
 
