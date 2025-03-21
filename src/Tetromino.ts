@@ -119,14 +119,6 @@ export class ANY_shape {
         return new T_shape(0)
     }
 
-    toString() {
-        const shapeString = this.shape.map((row) => {
-            return row.join("")
-        }
-      )
-        .join("\n") + "\n"
-        return shapeString;
-      }
 }
 
 export type TetrominoShape = I_shape | O_shape | T_shape
