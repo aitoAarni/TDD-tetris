@@ -65,11 +65,6 @@ class O_shape2 {
     }
 }
 
-class O_shape {
-
-    constructor(rotatingShape: RotatingShape){
-    }
-}
  
 class T_shape {
     shape: string[][];
