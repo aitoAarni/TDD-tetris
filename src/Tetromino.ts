@@ -139,5 +139,4 @@ export class Tetromino {
                                  
     static O_SHAPE = new O_shape(0)
 
-    static I_SHAPE2 = new I_shape2(0)
 }
