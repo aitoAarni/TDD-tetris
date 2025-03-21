@@ -40,12 +40,14 @@ class I_shape {
 class O_shape {
     shape: string[][]
     shapeNumber: number
+    size: number
     static SHAPES = [
         [[".", ".", ".", "."], [".", "O", "O", "."], [".", "O", "O", "."], [".", ".", ".", "."]]
     ]
     constructor(shapeNumber: number){
         this.shapeNumber = shapeNumber
         this.shape = O_shape.SHAPES[this.shapeNumber]
+        this.size = 4
     }
     toString(){
         const shapeString = this.shape.map((row) => {
