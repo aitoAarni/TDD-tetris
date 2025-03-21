@@ -1,5 +1,3 @@
-import { RotatingShape } from "./RotatingShape";
-
 const alternate = [1, 0]
 
 class I_shape {
