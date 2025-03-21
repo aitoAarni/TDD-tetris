@@ -101,10 +101,6 @@ class T_shape {
     }
 }
 
-export class ANY_shape {
-
-}
-
 export type TetrominoShape = I_shape | O_shape | T_shape
 
 export class Tetromino {
