@@ -5,7 +5,13 @@ class I_shape2 {
     shapeNumber: number
     shape: string[][]
     static shapes = [
-        [[".", ".", ".", "."],["I", "I", "I", "I"],[".", ".", ".", "."],[".", ".", ".", "."]]
+        [[".", ".", ".", "."],["I", "I", "I", "I"],[".", ".", ".", "."],[".", ".", ".", "."]],
+        [
+        [".", ".", "I", "."],
+        [".", ".", "I", "."],
+        [".", ".", "I", "."],
+        [".", ".", "I", "."]
+    ],
     ];
     constructor(shapeNumber: number){
         this.shapeNumber = shapeNumber
@@ -18,6 +24,9 @@ class I_shape2 {
     )
     .join("\n") + "\n"
     return shapeString;
+    }
+    rotateRight() {
+        return new I_shape2(1)
     }
   }
 
