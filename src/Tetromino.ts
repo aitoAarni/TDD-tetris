@@ -53,14 +53,6 @@ class I_shape {
         return new I_shape(new RotatingShape(newShape.shape))
     }
 
-    rotateLeft() {
-        const newShape = this.rotatingShape.rotateLeft()
-        const temp = newShape.shape[newShape.shape.length-1]
-        newShape.shape[newShape.shape.length-1] = newShape.shape[0]
-        newShape.shape[0] = temp
-        return new I_shape(new RotatingShape(newShape.shape))
-    }
-
 }
 
 class O_shape {
