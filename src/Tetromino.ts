@@ -2,6 +2,10 @@ import { RotatingShape } from "./RotatingShape";
 
 
 class I_shape2 {
+    
+    constructor(shapeNumber: number){
+
+    }
     toString() {
       const shape = [[".", ".", ".", "."],["I", "I", "I", "I"],[".", ".", ".", "."],[".", ".", ".", "."]];
       const shapeString = shape.map((row) => {
