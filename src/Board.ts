@@ -75,7 +75,7 @@ export class Board {
     if (!moveDown || !this.tetrominoFalling) {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
-      this.clearLines()
+      this.clearLines();
       return false;
     }
     this.moveDown();
