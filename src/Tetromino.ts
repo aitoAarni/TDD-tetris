@@ -84,14 +84,6 @@ class O_shape {
         return new O_shape(new RotatingShape(this.rotatingShape.shape))
     }
 
-    toString() {
-        const shapeString = this.shape.map((row) => {
-            return row.join("")
-        }
-      )
-        .join("\n") + "\n"
-        return shapeString;
-      }
 }
  
 class T_shape {
@@ -171,4 +163,5 @@ export class Tetromino {
                                             .....`))
 
     static O_SHAPE = new O_shape2(0)
+    static O_SHAPE2 = new O_shape2(0)
 }
