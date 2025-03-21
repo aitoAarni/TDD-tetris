@@ -11,7 +11,7 @@ export class Board {
   fallingTetrominoRow: number;
   fallingTetromino: TetrominoShape | null;
   observers: Observer[];
-  tetrominoStartColumn;
+  tetrominoStartColumn: number;
   constructor(width: number, height: number) {
     this.width = width;
     this.height = height;

@@ -20,5 +20,7 @@ describe("Board as an subject class tests", () => {
         expect(board.observers).to.deep.equal([observer1, observer2])
     })
 
+    
+
 
 })
