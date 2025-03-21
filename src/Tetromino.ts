@@ -102,15 +102,6 @@ class T_shape {
 }
 
 export class ANY_shape {
-    rotatingShape: RotatingShape
-    shape: string[][]
-    size: number
-    constructor(rotatingShape: RotatingShape){
-        this.rotatingShape = rotatingShape
-        this.shape = rotatingShape.shape
-        this.size = rotatingShape.size
-    }
-
 
 }
 
