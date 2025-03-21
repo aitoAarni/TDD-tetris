@@ -1,5 +1,8 @@
 import { TetrominoShape } from "./Tetromino";
 
+interface Observer {
+  update(rowsCleared: number): void;
+}
 export class Board {
   width: number;
   height: number;
@@ -7,6 +10,7 @@ export class Board {
   tetrominoFalling: boolean;
   fallingTetrominoRow: number;
   fallingTetromino: TetrominoShape | null;
+  observers: Observer[];
   tetrominoStartColumn;
   constructor(width: number, height: number) {
     this.width = width;
@@ -16,6 +20,7 @@ export class Board {
     this.fallingTetrominoRow = 0;
     this.fallingTetromino = null;
     this.tetrominoStartColumn = 0;
+    this.observers = [];
   }
 
   setBoard(string: string) {
@@ -34,6 +39,9 @@ export class Board {
     this.board = newBoard;
   }
 
+  addObserver(observer: Observer) {
+    this.observers.push(observer);
+  }
   toString() {
     const boardRowsStrings = this.board.map((row: string[]) => {
       return row.join("");
