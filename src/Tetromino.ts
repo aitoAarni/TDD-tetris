@@ -5,7 +5,9 @@ class I_shape2 {
     toString() {
       const shape = [[".", ".", ".", "."],["I", "I", "I", "I"],[".", ".", ".", "."],[".", ".", ".", "."]];
       const shapeString = shape.map((row) => {
-        return row.join("")})
+        return row.join("")
+        }
+    )
     .join("\n") + "\n"
     return shapeString;
     }
