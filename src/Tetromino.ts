@@ -1,6 +1,10 @@
 import { RotatingShape } from "./RotatingShape";
 
 
+class I_shape2 {
+    
+}
+
 class I_shape {
     rotatingShape: RotatingShape
     shape: string[][]
