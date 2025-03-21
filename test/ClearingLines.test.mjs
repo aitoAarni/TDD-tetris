@@ -1,6 +1,7 @@
 import { beforeEach, describe, test } from "vitest";
 import { expect } from "chai";
 import { Board } from "../src/Board";
+import { Tetromino } from "../src/Tetromino";
 
 describe("Clearing lines test", () => {
     let board
@@ -43,6 +44,30 @@ describe("Clearing lines test", () => {
             .T....
             ..TT..
             .TTTTT
+            `)
+    })
+    
+    test("Clears board after block has landed", () => {
+        board.setBoard(`
+            ......
+            .....T
+            .....I
+            .....O
+            T...TT
+            TT.TTT
+            `)
+        board.drop(Tetromino.T_SHAPE)
+        board.tick()
+        board.tick()
+        board.tick()
+        board.tick()
+        expect(board.toString()).to.equalShape(`
+            ......
+            ......
+            ......
+            .....T
+            .....I
+            .....O
             `)
     })
 })
