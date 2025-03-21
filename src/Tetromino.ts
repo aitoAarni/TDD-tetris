@@ -60,6 +60,9 @@ class O_shape2 {
         return new O_shape2(0)
     }
     
+    rotateLeft() {
+        return new O_shape2(0)
+    }
 }
 
 class O_shape {
