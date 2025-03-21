@@ -28,6 +28,9 @@ class I_shape2 {
     rotateRight() {
         return new I_shape2(1)
     }
+    rotateLeft() {
+        return new I_shape2(1)
+    }
   }
 
 class I_shape {
