@@ -43,17 +43,19 @@ export class Board {
   }
 
   clearLine(index: number) {
-    this.board.splice(index, 1)
-    const arr = Array(this.width).fill(null).map(() => ".")
-    this.board.splice(0, 0, arr)
+    this.board.splice(index, 1);
+    const arr = Array(this.width)
+      .fill(null)
+      .map(() => ".");
+    this.board.splice(0, 0, arr);
   }
 
   clearLines() {
-    const clearLines: number[] = []
+    const clearLines: number[] = [];
     this.board.forEach((row, rowIndex) => {
-      if (1 ===row.join("").split(".").length) clearLines.push(rowIndex)
-    })
-    clearLines.forEach((index) => this.clearLine(index))
+      if (1 === row.join("").split(".").length) clearLines.push(rowIndex);
+    });
+    clearLines.forEach((index) => this.clearLine(index));
   }
   drop(tetromino: TetrominoShape) {
     if (this.tetrominoFalling) {
