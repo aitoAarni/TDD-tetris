@@ -111,13 +111,6 @@ export class ANY_shape {
         this.size = rotatingShape.size
     }
 
-    rotateRight() {
-        return new T_shape(0)
-    }
-
-    rotateLeft() {
-        return new T_shape(0)
-    }
 
 }
 
