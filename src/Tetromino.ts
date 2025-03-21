@@ -60,14 +60,7 @@ class I_shape {
         newShape.shape[0] = temp
         return new I_shape(new RotatingShape(newShape.shape))
     }
-    toString() {
-        const shapeString = this.shape.map((row) => {
-            return row.join("")
-        }
-      )
-        .join("\n") + "\n"
-        return shapeString;
-      }
+
 }
 
 class O_shape {
