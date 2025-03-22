@@ -44,8 +44,8 @@ export class Board {
   }
 
   removeObserver(observer: Observer) {
-    const index = this.observers.indexOf(observer)
-    if (index !== -1) this.observers.splice(index, 1)
+    const index = this.observers.indexOf(observer);
+    if (index !== -1) this.observers.splice(index, 1);
   }
 
   notifyObservers(rowsCleared: number) {
@@ -76,7 +76,7 @@ export class Board {
       if (1 === row.join("").split(".").length) clearLines.push(rowIndex);
     });
     clearLines.forEach((index) => this.clearLine(index));
-    return clearLines.length
+    return clearLines.length;
   }
 
   drop(tetromino: TetrominoShape) {
@@ -97,7 +97,7 @@ export class Board {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
       const linesRemoved = this.clearLines();
-      if (linesRemoved > 0) this.notifyObservers(linesRemoved)
+      if (linesRemoved > 0) this.notifyObservers(linesRemoved);
       return false;
     }
     this.moveDown();
