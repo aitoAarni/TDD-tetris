@@ -6,10 +6,11 @@ export default class Scoring {
     }
 
     addScore(score: number) {
-        this.totalScore += score
+        this.totalScore += score;
+      }
+      calculateScore(linesRemoved: number) {
+        const scores = [0, 40, 100, 300, 1200];
+        return scores[linesRemoved];
+      }
     }
-    calculateScore(linesRemoved: number) {
-        const scores = [0, 40, 100, 300, 1200]
-        return scores[linesRemoved]
-    }
-}
+    
