@@ -76,6 +76,7 @@ export class Board {
       if (1 === row.join("").split(".").length) clearLines.push(rowIndex);
     });
     clearLines.forEach((index) => this.clearLine(index));
+    return clearLines.length
   }
 
   drop(tetromino: TetrominoShape) {
@@ -95,7 +96,8 @@ export class Board {
     if (!moveDown || !this.tetrominoFalling) {
       this.tetrominoFalling = false;
       this.fallingTetrominoRow = 0;
-      this.clearLines();
+      const linesRemoved = this.clearLines();
+      if (linesRemoved > 0) this.notifyObservers(linesRemoved)
       return false;
     }
     this.moveDown();
