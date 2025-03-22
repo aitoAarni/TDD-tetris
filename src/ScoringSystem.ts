@@ -29,5 +29,6 @@ export default class ScoringSystem {
     const score = this.calculateScore(linesRemoved);
     this.addScore(score);
     this.addLinesRemoved(linesRemoved)
+    this.updateLevel()
   }
 }

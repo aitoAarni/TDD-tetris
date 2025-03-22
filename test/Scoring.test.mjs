@@ -64,10 +64,17 @@ describe("Scoring system test", () => {
     expect(scoring.score).toBe(300);
   });
 
-  test("Score update adds lines removed", () => {
+  test("Update adds lines removed", () => {
     scoring.update(5)
     expect(scoring.linesRemoved).toBe(5)
 
+  })
+  test("Update method updates level", () => {
+    scoring.update(5)
+    scoring.update(5)
+    scoring.update(5)
+    scoring.update(5)
+    expect(scoring.level).toBe(3)
   })
   describe("Updates score", () => {
     test("Updates score when Scoring observer of board", () => {
