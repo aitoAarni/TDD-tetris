@@ -1,13 +1,13 @@
 export default class ScoringSystem {
-  totalScore: number;
+  score: number;
   level: number;
   constructor() {
-    this.totalScore = 0;
+    this.score = 0;
     this.level = 1;
   }
 
   addScore(score: number) {
-    this.totalScore += score;
+    this.score += score;
   }
   calculateScore(linesRemoved: number) {
     const scores = [0, 40, 100, 300, 1200];

@@ -18,7 +18,7 @@ describe("Scoring system test", () => {
   });
 
   test("Scoring has a total score", () => {
-    expect(scoring.totalScore).toBe(0);
+    expect(scoring.score).toBe(0);
   });
   
   test("Initial level is 1", () => {
@@ -27,7 +27,7 @@ describe("Scoring system test", () => {
   test("Score can be increased with method", () => {
     scoring.addScore(100);
     scoring.addScore(200);
-    expect(scoring.totalScore).toBe(300);
+    expect(scoring.score).toBe(300);
   });
 
 
@@ -40,7 +40,7 @@ describe("Scoring system test", () => {
 
   test("Score update increases score", () => {
     scoring.update(3);
-    expect(scoring.totalScore).toBe(300);
+    expect(scoring.score).toBe(300);
   });
   describe("Updates score", () => {
     test("Updates score when Scoring observer of board", () => {
@@ -57,7 +57,7 @@ describe("Scoring system test", () => {
       board.drop(Tetromino.T_SHAPE);
       board.tick();
       board.tick();
-      expect(scoring.totalScore).toBe(100);
+      expect(scoring.score).toBe(100);
     });
   });
 });
