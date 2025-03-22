@@ -3,13 +3,6 @@ import ScoringSystem from "../src/ScoringSystem";
 import { Board } from "../src/Board";
 import { Tetromino } from "../src/Tetromino";
 
-// Has an initial score of 0
-// starts from level 1
-// score can be increased
-// levels increase when lines removed
-// calculates score based on Lines removed x level
-// update function increases score
-// score is increased when rows/lines are removed
 
 describe("Scoring system test", () => {
   let scoring;
@@ -51,6 +44,7 @@ describe("Scoring system test", () => {
     expect(scoring.level).toBe(10);
   });
 
+
   test("Score gets calculated by lines removed x level", () => {
     expect(scoring.calculateScore(1)).toBe(40);
     expect(scoring.calculateScore(2)).toBe(100);
@@ -69,6 +63,12 @@ describe("Scoring system test", () => {
     scoring.update(3);
     expect(scoring.score).toBe(300);
   });
+
+  test("Score update adds lines removed", () => {
+    scoring.update(5)
+    expect(scoring.linesRemoved).toBe(5)
+
+  })
   describe("Updates score", () => {
     test("Updates score when Scoring observer of board", () => {
       const board = new Board(10, 6);

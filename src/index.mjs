@@ -16,6 +16,7 @@ function initGame() {
   };
   game.scoring = new ScoringSystem();
   game.board = new Board(game.columns, game.rows);
+  game.board.addObserver(game.scoring)
   game.board.onClearLine = (lineCount) => {
     game.scoring.linesCleared(lineCount);
   };

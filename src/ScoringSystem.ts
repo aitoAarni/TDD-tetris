@@ -28,5 +28,6 @@ export default class ScoringSystem {
   update(linesRemoved: number) {
     const score = this.calculateScore(linesRemoved);
     this.addScore(score);
+    this.addLinesRemoved(linesRemoved)
   }
 }
