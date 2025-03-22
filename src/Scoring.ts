@@ -4,4 +4,8 @@ export default class Scoring {
     constructor() {
         this.totalScore = 0
     }
+
+    addScore(score: number) {
+        this.totalScore += score
+    }
 }

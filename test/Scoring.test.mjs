@@ -14,4 +14,10 @@ describe("Scoring system test", () => {
   test("Scoring has a total score", () => {
     expect(scoring.totalScore).toBe(0);
   });
+
+  test("Score can be increased with method", () => {
+    scoring.addScore(100)
+    scoring.addScore(200)
+    expect(scoring.totalScore).toBe(300)
+  })
 });
