@@ -98,7 +98,7 @@ export class Board {
       this.fallingTetrominoRow = 0;
       const linesRemoved = this.clearLines();
       if (linesRemoved > 0) this.notifyObservers(linesRemoved);
-      return false;
+      return;
     }
     this.moveDown();
   }
