@@ -6,7 +6,7 @@ import { before } from "lodash";
 // Has a variable for length of tetominoes
 // Creates a list for indexes of tetrominoes
 // can randomizes a list of variables
-// has a next method that returns next tetrominoe in random order
+// has a next method that returns next tetrominoe in indexed order
 // if list runs out a new random order is created
 
 describe("ShuffleBag tests", () => {
@@ -32,7 +32,12 @@ describe("ShuffleBag tests", () => {
   test("Randomizes the list of indexes", () => {
     vi.spyOn(Math, "random").mockImplementation(() => 0);
     shuffleBag.shuffle();
-    console.log(shuffleBag.indexes);
     expect(shuffleBag.indexes).to.deep.equal([1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0]);
+  });
+  test("Next method returns next Tetromino", () => {
+    vi.spyOn(Math, "random").mockImplementation(() => 0);
+    expect(shuffleBag.next()).toBe(Tetromino1);
+    expect(shuffleBag.next()).toBe(Tetromino2);
+    expect(shuffleBag.next()).toBe(Tetromino3);
   });
 });
