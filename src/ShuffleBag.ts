@@ -11,4 +11,11 @@ export default class ShuffleBag {
       .fill(0)
       .map((_, index) => index % this.tetrominoCount);
   }
+
+  shuffle() {
+    for (let i = this.indexes.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [this.indexes[i], this.indexes[j]] = [this.indexes[j], this.indexes[i]];
+    }
+  }
 }

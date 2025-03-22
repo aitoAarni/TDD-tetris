@@ -16,6 +16,7 @@ describe("ShuffleBag tests", () => {
   let Tetromino3 = vi.fn();
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.restoreAllMocks();
     shuffleBag = new ShuffleBag([Tetromino1, Tetromino2, Tetromino3]);
   });
   test("Shuffle bag takes list of tetrominoes as a variable", () => {
@@ -27,5 +28,11 @@ describe("ShuffleBag tests", () => {
   });
   test("List of indexes for tetrominoes is correct", () => {
     expect(shuffleBag.indexes).to.have.members([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]);
+  });
+  test("Randomizes the list of indexes", () => {
+    vi.spyOn(Math, "random").mockImplementation(() => 0);
+    shuffleBag.shuffle();
+    console.log(shuffleBag.indexes);
+    expect(shuffleBag.indexes).to.deep.equal([1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0]);
   });
 });
