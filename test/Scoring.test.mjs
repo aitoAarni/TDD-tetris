@@ -33,6 +33,12 @@ describe("Scoring system test", () => {
     expect(scoring.score).toBe(300);
   });
 
+  test("Lines can be added", () => {
+    scoring.addLinesRemoved(4);
+    scoring.addLinesRemoved(2);
+    expect(scoring.linesRemoved).toBe(6);
+  });
+
   test("Score gets calculated by lines removed", () => {
     expect(scoring.calculateScore(1)).toBe(40);
     expect(scoring.calculateScore(2)).toBe(100);

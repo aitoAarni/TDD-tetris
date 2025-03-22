@@ -8,6 +8,10 @@ export default class ScoringSystem {
     this.linesRemoved = 0;
   }
 
+  addLinesRemoved(removedLines: number) {
+    this.linesRemoved += removedLines
+  }
+
   addScore(score: number) {
     this.score += score;
   }
