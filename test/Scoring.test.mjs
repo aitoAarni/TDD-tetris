@@ -4,8 +4,10 @@ import { Board } from "../src/Board";
 import { Tetromino } from "../src/Tetromino";
 
 // Has an initial score of 0
+// starts from level 1
 // score can be increased
-// calculates score based on Lines removed
+// levels increase when lines removed
+// calculates score based on Lines removed x level
 // update function increases score
 // score is increased when rows/lines are removed
 
@@ -14,16 +16,20 @@ describe("Scoring system test", () => {
   beforeEach(() => {
     scoring = new ScoringSystem();
   });
-  
+
   test("Scoring has a total score", () => {
     expect(scoring.totalScore).toBe(0);
   });
-
+  
+  test("Initial level is 1", () => {
+    expect(scoring.level).toBe(1)
+  })
   test("Score can be increased with method", () => {
     scoring.addScore(100);
     scoring.addScore(200);
     expect(scoring.totalScore).toBe(300);
   });
+
 
   test("Score gets calculated by lines removed", () => {
     expect(scoring.calculateScore(1)).toBe(40);

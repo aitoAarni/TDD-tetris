@@ -1,7 +1,9 @@
 export default class ScoringSystem {
   totalScore: number;
+  level: number;
   constructor() {
     this.totalScore = 0;
+    this.level = 1;
   }
 
   addScore(score: number) {
@@ -13,7 +15,7 @@ export default class ScoringSystem {
   }
 
   update(linesRemoved: number) {
-    const score = this.calculateScore(linesRemoved)
-    this.addScore(score)
-  } 
+    const score = this.calculateScore(linesRemoved);
+    this.addScore(score);
+  }
 }
