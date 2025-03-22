@@ -43,6 +43,11 @@ export class Board {
     this.observers.push(observer);
   }
 
+  removeObserver(observer: Observer) {
+    const index = this.observers.indexOf(observer)
+    if (index !== -1) this.observers.splice(index, 1)
+  }
+
   notifyObservers(rowsCleared: number) {
     this.observers.forEach((observer) => {
       observer.update(rowsCleared);
