@@ -1,9 +1,11 @@
 export default class ScoringSystem {
   score: number;
   level: number;
+  linesRemoved: number;
   constructor() {
     this.score = 0;
     this.level = 1;
+    this.linesRemoved = 0;
   }
 
   addScore(score: number) {

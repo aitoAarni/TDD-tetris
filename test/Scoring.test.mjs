@@ -20,16 +20,18 @@ describe("Scoring system test", () => {
   test("Scoring has a total score", () => {
     expect(scoring.score).toBe(0);
   });
-  
+
   test("Initial level is 1", () => {
-    expect(scoring.level).toBe(1)
-  })
+    expect(scoring.level).toBe(1);
+  });
+  test("Lines removed is 0 at start", () => {
+    expect(scoring.linesRemoved).toBe(0);
+  });
   test("Score can be increased with method", () => {
     scoring.addScore(100);
     scoring.addScore(200);
     expect(scoring.score).toBe(300);
   });
-
 
   test("Score gets calculated by lines removed", () => {
     expect(scoring.calculateScore(1)).toBe(40);
