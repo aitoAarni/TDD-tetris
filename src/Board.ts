@@ -42,6 +42,13 @@ export class Board {
   addObserver(observer: Observer) {
     this.observers.push(observer);
   }
+
+  notifyObservers(rowsCleared: number) {
+    this.observers.forEach((observer) => {
+      observer.update(rowsCleared);
+    });
+  }
+
   toString() {
     const boardRowsStrings = this.board.map((row: string[]) => {
       return row.join("");
