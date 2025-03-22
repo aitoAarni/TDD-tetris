@@ -1,5 +1,5 @@
 import { beforeEach, describe, test, expect } from "vitest";
-import Scoring from "../src/Scoring";
+import ScoringSystem from "../src/ScoringSystem";
 import { Board } from "../src/Board";
 import { Tetromino } from "../src/Tetromino";
 
@@ -12,14 +12,14 @@ import { Tetromino } from "../src/Tetromino";
 describe("Scoring system test", () => {
   let scoring;
   beforeEach(() => {
-    scoring = new Scoring();
+    scoring = new ScoringSystem();
   });
   
-  test.skip("Scoring has a total score", () => {
+  test("Scoring has a total score", () => {
     expect(scoring.totalScore).toBe(0);
   });
 
-  test.skip("Score can be increased with method", () => {
+  test("Score can be increased with method", () => {
     scoring.addScore(100);
     scoring.addScore(200);
     expect(scoring.totalScore).toBe(300);
