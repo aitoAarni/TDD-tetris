@@ -45,6 +45,12 @@ describe("Scoring system test", () => {
     expect(scoring.level).toBe(3);
   });
 
+  test("maximum level is 10", () => {
+    scoring.addLinesRemoved(139);
+    scoring.updateLevel();
+    expect(scoring.level).toBe(10);
+  });
+
   test("Score gets calculated by lines removed", () => {
     expect(scoring.calculateScore(1)).toBe(40);
     expect(scoring.calculateScore(2)).toBe(100);

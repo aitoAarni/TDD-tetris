@@ -13,7 +13,8 @@ export default class ScoringSystem {
   }
 
   updateLevel() {
-    this.level = Math.floor(this.linesRemoved / 10) + 1;
+    const level = Math.floor(this.linesRemoved / 10) + 1;
+    this.level = level <= 10 ? level : 10;
   }
 
   addScore(score: number) {
