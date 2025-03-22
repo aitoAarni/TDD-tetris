@@ -30,7 +30,8 @@ describe("Scoring system test", () => {
     
   })
 
-  test.skip("Score update increases score", () => {
-    scoring.update()
+  test("Score update increases score", () => {
+    scoring.update(3)
+    expect(scoring.totalScore).toBe(300)
   })
 });
