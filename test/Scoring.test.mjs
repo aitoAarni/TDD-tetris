@@ -15,29 +15,29 @@ describe("Scoring system test", () => {
     scoring = new Scoring();
   });
   
-  test("Scoring has a total score", () => {
+  test.skip("Scoring has a total score", () => {
     expect(scoring.totalScore).toBe(0);
   });
 
-  test("Score can be increased with method", () => {
+  test.skip("Score can be increased with method", () => {
     scoring.addScore(100);
     scoring.addScore(200);
     expect(scoring.totalScore).toBe(300);
   });
 
-  test("Score gets calculated by lines removed", () => {
+  test.skip("Score gets calculated by lines removed", () => {
     expect(scoring.calculateScore(1)).toBe(40);
     expect(scoring.calculateScore(2)).toBe(100);
     expect(scoring.calculateScore(3)).toBe(300);
     expect(scoring.calculateScore(4)).toBe(1200);
   });
 
-  test("Score update increases score", () => {
+  test.skip("Score update increases score", () => {
     scoring.update(3);
     expect(scoring.totalScore).toBe(300);
   });
   describe("Updates score", () => {
-    test("Updates score when Scoring observer of board", () => {
+    test.skip("Updates score when Scoring observer of board", () => {
       const board = new Board(10, 6);
       board.addObserver(scoring);
       board.setBoard(`

@@ -12,8 +12,4 @@ export default class Scoring {
     return scores[linesRemoved];
   }
 
-  update(linesRemoved: number) {
-    const score = this.calculateScore(linesRemoved)
-    this.addScore(score)
-  }
 }
