@@ -19,10 +19,13 @@ describe("ShuffleBag tests", () => {
     shuffleBag = new ShuffleBag([Tetromino1, Tetromino2, Tetromino3]);
   });
   test("Shuffle bag takes list of tetrominoes as a variable", () => {
-    expect(shuffleBag.tetrominoes).to.deep.equal([Tetromino1, Tetromino2, Tetromino3])
+    expect(shuffleBag.tetrominoes).to.deep.equal([Tetromino1, Tetromino2, Tetromino3]);
   });
 
   test("Length of tetromino list is same as actual length", () => {
-    expect(shuffleBag.tetrominoCount).toBe(3)
-  })
+    expect(shuffleBag.tetrominoCount).toBe(3);
+  });
+  test("List of indexes for tetrominoes is correct", () => {
+    expect(shuffleBag.indexes).to.have.members([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]);
+  });
 });
