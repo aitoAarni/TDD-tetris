@@ -41,5 +41,13 @@ describe("ShuffleBag tests", () => {
     expect(shuffleBag.next()).toBe(Tetromino1);
   });
 
-  test("next method")
+  test("next method return index to 0 and shuffle again if index too big", () => {
+    vi.spyOn(Math, "random").mockImplementation(vi.fn(() => 0));
+    shuffleBag.next();
+    shuffleBag.index = 12;
+    vi.clearAllMocks()
+    shuffleBag.next();
+    expect(shuffleBag.index).toBe(1);
+    expect(Math.random).toHaveBeenCalledTimes(11);
+  });
 });

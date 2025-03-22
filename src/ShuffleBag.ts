@@ -22,7 +22,7 @@ export default class ShuffleBag {
   }
 
   next() {
-    if (this.index < 0) {
+    if (this.index < 0 || this.index >= 4 * this.tetrominoCount) {
       this.index = 0;
       this.shuffle();
     }
