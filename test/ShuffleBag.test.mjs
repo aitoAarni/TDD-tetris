@@ -7,7 +7,7 @@ import { before } from "lodash";
 // Creates a list for indexes of tetrominoes
 // can randomizes a list of variables
 // has a next method that returns next tetrominoe in indexed order
-// if list runs out a new random order is created
+// indexes list is randomized at first next() call and when index out of range
 
 describe("ShuffleBag tests", () => {
   let shuffleBag;
@@ -34,10 +34,12 @@ describe("ShuffleBag tests", () => {
     shuffleBag.shuffle();
     expect(shuffleBag.indexes).to.deep.equal([1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0]);
   });
-  test("Next method returns next Tetromino", () => {
+  test(" method returns next Tetromino in random order", () => {
     vi.spyOn(Math, "random").mockImplementation(() => 0);
-    expect(shuffleBag.next()).toBe(Tetromino1);
     expect(shuffleBag.next()).toBe(Tetromino2);
     expect(shuffleBag.next()).toBe(Tetromino3);
+    expect(shuffleBag.next()).toBe(Tetromino1);
   });
+
+  test("next method")
 });

@@ -11,7 +11,7 @@ export default class ShuffleBag {
     this.indexes = Array(this.tetrominoCount * 4)
       .fill(0)
       .map((_, index) => index % this.tetrominoCount);
-    this.index = 0;
+    this.index = -1;
   }
 
   shuffle() {
@@ -22,7 +22,10 @@ export default class ShuffleBag {
   }
 
   next() {
-    // this.shuffle();
+    if (this.index < 0) {
+      this.index = 0;
+      this.shuffle();
+    }
     return this.tetrominoes[this.indexes[this.index++]];
   }
 }
