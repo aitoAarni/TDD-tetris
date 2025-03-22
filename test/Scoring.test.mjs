@@ -51,11 +51,18 @@ describe("Scoring system test", () => {
     expect(scoring.level).toBe(10);
   });
 
-  test("Score gets calculated by lines removed", () => {
+  test("Score gets calculated by lines removed x level", () => {
     expect(scoring.calculateScore(1)).toBe(40);
     expect(scoring.calculateScore(2)).toBe(100);
     expect(scoring.calculateScore(3)).toBe(300);
     expect(scoring.calculateScore(4)).toBe(1200);
+    scoring.addLinesRemoved(10);
+    scoring.updateLevel()
+    expect(scoring.calculateScore(1)).toBe(80);
+    expect(scoring.calculateScore(2)).toBe(200);
+    expect(scoring.calculateScore(3)).toBe(600);
+    expect(scoring.calculateScore(4)).toBe(2400);
+
   });
 
   test("Score update increases score", () => {

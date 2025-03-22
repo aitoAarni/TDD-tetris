@@ -22,7 +22,7 @@ export default class ScoringSystem {
   }
   calculateScore(linesRemoved: number) {
     const scores = [0, 40, 100, 300, 1200];
-    return scores[linesRemoved];
+    return this.level * scores[linesRemoved];
   }
 
   update(linesRemoved: number) {
