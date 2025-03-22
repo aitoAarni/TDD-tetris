@@ -21,4 +21,8 @@ describe("ShuffleBag tests", () => {
   test("Shuffle bag takes list of tetrominoes as a variable", () => {
     expect(shuffleBag.tetrominoes).to.deep.equal([Tetromino1, Tetromino2, Tetromino3])
   });
+
+  test("Length of tetromino list is same as actual length", () => {
+    expect(shuffleBag.tetrominoCount).toBe(3)
+  })
 });
