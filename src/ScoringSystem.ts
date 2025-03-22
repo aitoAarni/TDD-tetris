@@ -9,7 +9,11 @@ export default class ScoringSystem {
   }
 
   addLinesRemoved(removedLines: number) {
-    this.linesRemoved += removedLines
+    this.linesRemoved += removedLines;
+  }
+
+  updateLevel() {
+    this.level = Math.floor(this.linesRemoved / 10) + 1;
   }
 
   addScore(score: number) {
