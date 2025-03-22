@@ -14,6 +14,7 @@ describe("Scoring system test", () => {
   beforeEach(() => {
     scoring = new Scoring();
   });
+  
   test("Scoring has a total score", () => {
     expect(scoring.totalScore).toBe(0);
   });
